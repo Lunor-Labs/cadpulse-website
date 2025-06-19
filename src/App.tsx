@@ -21,13 +21,17 @@ import {
   ExternalLink,
   TrendingUp,
   Award,
-  Clock
+  Clock,
+  Star,
+  Calendar,
+  BarChart3,
+  Sparkles
 } from 'lucide-react';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState<any>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,29 +70,29 @@ function App() {
 
   const services = [
     {
-      icon: <Layers className="w-8 h-8" />,
-      title: "Product Design",
-      description: "Complete product development from concept to manufacturing-ready designs using advanced CAD software and engineering principles."
+      icon: <Cog className="w-8 h-8" />,
+      title: "INDUSTRIAL MACHINERY DESIGN",
+      description: "From heavy-duty machinery to automated production lines, CADPULSE specializes in creating robust and efficient industrial machinery designs. Trust us to optimize performance and drive your operations forward."
     },
     {
       icon: <Cog className="w-8 h-8" />,
-      title: "Industrial Machinery Design",
-      description: "Custom industrial machinery and equipment design for manufacturing processes, automation, and production optimization."
+      title: "PRODUCT DESIGN",
+      description: "Transform your concepts into market-ready solutions with CADPULSE's expert product design services. Our team merges creativity with technology to craft innovative designs that captivate audiences and drive success."
     },
     {
       icon: <RotateCcw className="w-8 h-8" />,
-      title: "Reverse Engineering",
-      description: "Recreate existing products through precise measurement, analysis, and digital modeling for improvement or reproduction."
+      title: "REVERSE ENGINEERING",
+      description: "We reimagine your products and stay ahead of the curve by being updated and meticulously analyze and recreate products, enhancing design, efficiency, and functionality."
     },
     {
       icon: <Wrench className="w-8 h-8" />,
-      title: "Manufacturing Support",
-      description: "Technical support services including design optimization, material selection, and manufacturing process consultation."
+      title: "MANUFACTURING SUPPORTIVE SERVICES",
+      description: "From concept to production, we offer comprehensive assistance to streamline your manufacturing processes. Our expert team provides tailored solutions, ensuring efficiency, quality, and cost-effectiveness every step of the way"
     },
     {
       icon: <PenTool className="w-8 h-8" />,
-      title: "2D Drafting",
-      description: "Professional technical drawings, blueprints, and documentation for manufacturing, construction, and engineering projects."
+      title: "2D DRAFTING",
+      description: "We ensure precision and clarity in your engineering projects with 2D drafting services. Our skilled drafters produce clear and concise technical drawings, ready for seamless integration into your projects."
     }
   ];
 
@@ -97,79 +101,103 @@ function App() {
       id: 1,
       title: "Industrial Mixer Redesign",
       description: "Enhanced productivity by 35% through automation",
-      image: "https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/project-industrial-mixer.jpg",
       category: "Industrial Machinery",
-      details: "Complete redesign of industrial mixing equipment with automated controls, resulting in 35% productivity increase and 20% reduction in energy consumption.",
+      duration: "8 weeks",
+      rating: 5,
+      details: "Complete redesign of industrial mixing equipment with automated controls, resulting in 35% productivity increase and 20% reduction in energy consumption. The project involved advanced 3D modeling, stress analysis, and integration of smart control systems.",
       metrics: [
-        { label: "Productivity Increase", value: "35%" },
-        { label: "Energy Reduction", value: "20%" },
-        { label: "Project Duration", value: "8 weeks" }
-      ]
+        { label: "Productivity Increase", value: "35%", icon: <TrendingUp className="w-5 h-5" /> },
+        { label: "Energy Reduction", value: "20%", icon: <Zap className="w-5 h-5" /> },
+        { label: "Project Duration", value: "8 weeks", icon: <Clock className="w-5 h-5" /> }
+      ],
+      technologies: ["SolidWorks", "AutoCAD", "ANSYS", "PLC Programming"],
+      client: "Manufacturing Corp"
     },
     {
       id: 2,
       title: "Precision Manufacturing Jig",
       description: "Reduced assembly time by 50% with custom tooling",
-      image: "https://images.pexels.com/photos/162553/keys-workshop-mechanic-tools-162553.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/project-manufacturing-jig.jpg",
       category: "Manufacturing Support",
-      details: "Custom-designed manufacturing jig for precision assembly operations, dramatically improving efficiency and consistency in production.",
+      duration: "6 weeks",
+      rating: 5,
+      details: "Custom-designed manufacturing jig for precision assembly operations, dramatically improving efficiency and consistency in production. Features modular design for multiple product variants.",
       metrics: [
-        { label: "Assembly Time Reduction", value: "50%" },
-        { label: "Quality Improvement", value: "99.8%" },
-        { label: "ROI Achievement", value: "6 months" }
-      ]
+        { label: "Assembly Time Reduction", value: "50%", icon: <Clock className="w-5 h-5" /> },
+        { label: "Quality Improvement", value: "99.8%", icon: <Award className="w-5 h-5" /> },
+        { label: "ROI Achievement", value: "6 months", icon: <BarChart3 className="w-5 h-5" /> }
+      ],
+      technologies: ["Fusion 360", "CNC Programming", "Quality Control"],
+      client: "Precision Industries"
     },
     {
       id: 3,
       title: "Consumer Electronics Housing",
       description: "Optimized design for mass production scalability",
-      image: "https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/project-electronics-housing.jpg",
       category: "Product Design",
-      details: "Innovative housing design for consumer electronics with focus on manufacturability, cost optimization, and aesthetic appeal.",
+      duration: "10 weeks",
+      rating: 5,
+      details: "Innovative housing design for consumer electronics with focus on manufacturability, cost optimization, and aesthetic appeal. Includes thermal management and EMI shielding considerations.",
       metrics: [
-        { label: "Cost Reduction", value: "25%" },
-        { label: "Production Speed", value: "+40%" },
-        { label: "Material Efficiency", value: "30%" }
-      ]
+        { label: "Cost Reduction", value: "25%", icon: <TrendingUp className="w-5 h-5" /> },
+        { label: "Production Speed", value: "+40%", icon: <Zap className="w-5 h-5" /> },
+        { label: "Material Efficiency", value: "30%", icon: <Target className="w-5 h-5" /> }
+      ],
+      technologies: ["Rhino 3D", "KeyShot", "Injection Molding Analysis"],
+      client: "Tech Innovations Ltd"
     },
     {
       id: 4,
       title: "Automotive Component Reverse Engineering",
       description: "Recreated legacy parts with improved materials",
-      image: "https://images.pexels.com/photos/190574/pexels-photo-190574.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/project-automotive-component.jpg",
       category: "Reverse Engineering",
-      details: "Reverse engineered discontinued automotive components with material upgrades and performance enhancements for extended service life.",
+      duration: "12 weeks",
+      rating: 5,
+      details: "Reverse engineered discontinued automotive components with material upgrades and performance enhancements for extended service life. Included comprehensive testing and validation.",
       metrics: [
-        { label: "Durability Increase", value: "60%" },
-        { label: "Weight Reduction", value: "15%" },
-        { label: "Cost Savings", value: "40%" }
-      ]
+        { label: "Durability Increase", value: "60%", icon: <Award className="w-5 h-5" /> },
+        { label: "Weight Reduction", value: "15%", icon: <TrendingUp className="w-5 h-5" /> },
+        { label: "Cost Savings", value: "40%", icon: <BarChart3 className="w-5 h-5" /> }
+      ],
+      technologies: ["3D Scanning", "Material Analysis", "FEA Simulation"],
+      client: "Auto Parts Solutions"
     },
     {
       id: 5,
       title: "Packaging Machinery Upgrade",
       description: "Modernized controls for Industry 4.0 compliance",
-      image: "https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/project-packaging-machinery.jpg",
       category: "Industrial Machinery",
-      details: "Complete modernization of packaging machinery with smart controls, IoT integration, and predictive maintenance capabilities.",
+      duration: "14 weeks",
+      rating: 5,
+      details: "Complete modernization of packaging machinery with smart controls, IoT integration, and predictive maintenance capabilities. Achieved Industry 4.0 compliance with real-time monitoring.",
       metrics: [
-        { label: "Efficiency Gain", value: "45%" },
-        { label: "Downtime Reduction", value: "70%" },
-        { label: "Maintenance Savings", value: "55%" }
-      ]
+        { label: "Efficiency Gain", value: "45%", icon: <TrendingUp className="w-5 h-5" /> },
+        { label: "Downtime Reduction", value: "70%", icon: <Clock className="w-5 h-5" /> },
+        { label: "Maintenance Savings", value: "55%", icon: <Wrench className="w-5 h-5" /> }
+      ],
+      technologies: ["Industrial IoT", "HMI Design", "Predictive Analytics"],
+      client: "PackTech Systems"
     },
     {
       id: 6,
       title: "Medical Device Prototype",
       description: "FDA-compliant design with enhanced ergonomics",
-      image: "https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/project-medical-device.jpg",
       category: "Product Design",
-      details: "Precision medical device design meeting FDA compliance standards with focus on user ergonomics and manufacturing efficiency.",
+      duration: "16 weeks",
+      rating: 5,
+      details: "Precision medical device design meeting FDA compliance standards with focus on user ergonomics and manufacturing efficiency. Includes biocompatible material selection and sterilization considerations.",
       metrics: [
-        { label: "Compliance Rating", value: "100%" },
-        { label: "User Satisfaction", value: "95%" },
-        { label: "Time to Market", value: "-30%" }
-      ]
+        { label: "Compliance Rating", value: "100%", icon: <CheckCircle className="w-5 h-5" /> },
+        { label: "User Satisfaction", value: "95%", icon: <Users className="w-5 h-5" /> },
+        { label: "Time to Market", value: "-30%", icon: <Clock className="w-5 h-5" /> }
+      ],
+      technologies: ["Medical CAD", "Biocompatible Materials", "FDA Validation"],
+      client: "MedTech Innovations"
     }
   ];
 
@@ -186,50 +214,82 @@ function App() {
     }
   ];
 
-  const ProjectModal = ({ project, onClose }) => {
+  const ProjectModal = ({ project, onClose }: { project: any, onClose: () => void }) => {
     if (!project) return null;
 
     return (
       <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
-        <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div className="bg-white rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto modal-enter">
           <div className="relative">
             <img 
               src={project.image} 
               alt={project.title}
-              className="w-full h-64 object-cover rounded-t-2xl"
+              className="w-full h-80 object-cover rounded-t-2xl"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-t-2xl"></div>
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 bg-white bg-opacity-90 p-2 rounded-full hover:bg-opacity-100 transition-all"
+              className="absolute top-6 right-6 bg-white bg-opacity-90 hover:bg-opacity-100 p-3 rounded-full transition-all duration-200 hover:scale-110"
             >
               <X className="w-6 h-6" />
             </button>
+            <div className="absolute bottom-6 left-6 text-white">
+              <div className="flex items-center space-x-2 mb-2">
+                <span className="bg-blue-600 px-3 py-1 rounded-full text-sm font-medium">
+                  {project.category}
+                </span>
+                <div className="flex items-center space-x-1">
+                  {[...Array(project.rating)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+              </div>
+              <h3 className="text-3xl font-bold mb-2">{project.title}</h3>
+              <div className="flex items-center space-x-4 text-sm opacity-90">
+                <div className="flex items-center">
+                  <Calendar className="w-4 h-4 mr-1" />
+                  {project.duration}
+                </div>
+                <div className="flex items-center">
+                  <Users className="w-4 h-4 mr-1" />
+                  {project.client}
+                </div>
+              </div>
+            </div>
           </div>
           
           <div className="p-8">
-            <div className="mb-4">
-              <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
-                {project.category}
-              </span>
-            </div>
-            
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">{project.title}</h3>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">{project.details}</p>
             
             <div className="grid md:grid-cols-3 gap-6 mb-8">
-              {project.metrics.map((metric, index) => (
-                <div key={index} className="text-center p-4 bg-gray-50 rounded-lg">
-                  <div className="text-2xl font-bold text-blue-600 mb-2">{metric.value}</div>
-                  <div className="text-sm text-gray-600">{metric.label}</div>
+              {project.metrics.map((metric: any, index: number) => (
+                <div key={index} className="text-center p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-100 hover:shadow-lg transition-shadow">
+                  <div className="flex justify-center mb-3 text-blue-600">
+                    {metric.icon}
+                  </div>
+                  <div className="text-3xl font-bold text-blue-600 mb-2 metric-value">{metric.value}</div>
+                  <div className="text-sm text-gray-600 font-medium">{metric.label}</div>
                 </div>
               ))}
+            </div>
+
+            <div className="mb-8">
+              <h4 className="text-xl font-semibold text-gray-900 mb-4">Technologies Used</h4>
+              <div className="flex flex-wrap gap-2">
+                {project.technologies.map((tech: string, index: number) => (
+                  <span key={index} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </div>
             
             <div className="flex justify-center">
               <button
                 onClick={openWhatsApp}
-                className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 flex items-center shadow-lg hover:shadow-xl transform hover:scale-105"
               >
+                <Sparkles className="mr-2 w-5 h-5" />
                 Discuss Similar Project
                 <MessageCircle className="ml-2 w-5 h-5" />
               </button>
@@ -241,13 +301,17 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white font-ubuntu">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <Settings className="w-8 h-8 text-blue-600 mr-2" />
+              <img 
+                src="/cadpulse-logo.png" 
+                alt="CADPULSE Logo" 
+                className="w-10 h-10 mr-3"
+              />
               <span className="text-2xl font-bold text-gray-900">CADPULSE</span>
             </div>
             
@@ -326,11 +390,11 @@ function App() {
               </div>
             </div>
             <div className="relative">
-              <div className="bg-white p-8 rounded-2xl shadow-2xl">
+              <div className="bg-white p-8 rounded-2xl shadow-2xl animate-float">
                 <div className="grid grid-cols-3 gap-4 mb-6">
-                  <div className="h-4 bg-blue-200 rounded"></div>
+                  <div className="h-4 bg-blue-200 rounded animate-pulse-slow"></div>
                   <div className="h-4 bg-gray-200 rounded"></div>
-                  <div className="h-4 bg-blue-100 rounded"></div>
+                  <div className="h-4 bg-blue-100 rounded animate-pulse-slow"></div>
                 </div>
                 <div className="space-y-3">
                   <div className="h-3 bg-gray-300 rounded w-full"></div>
@@ -338,7 +402,7 @@ function App() {
                   <div className="h-3 bg-blue-300 rounded w-1/2"></div>
                 </div>
                 <div className="mt-6 flex items-center justify-between">
-                  <Settings className="w-12 h-12 text-blue-600" />
+                  <img src="/cadpulse-logo.png" alt="CAD" className="w-12 h-12" />
                   <Cpu className="w-10 h-10 text-gray-400" />
                   <Zap className="w-8 h-8 text-blue-400" />
                 </div>
@@ -359,16 +423,25 @@ function App() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                CADPULSE is a leading provider of comprehensive CAD design and engineering services, 
-                specializing in transforming innovative concepts into precise, manufacturable solutions. 
-                Our team of experienced engineers and designers combines technical expertise with creative 
-                problem-solving to deliver exceptional results.
+                CADPULSE stands at the forefront of design innovation, seamlessly merging cutting-edge technology with
+                creative expertise. Our mission is simple, to redefine product and machinery design through a relentless
+                pursuit of excellence. Operating under The Pulseway Solutions (PVT) Ltd, we ensure our solutions are not
+                only innovative but also backed by a solid foundation of industry experience and expertise
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                With years of industry experience and a commitment to excellence, we serve clients across 
-                various sectors, from product development startups to established manufacturing companies. 
-                Our mission is to accelerate your project timelines while maintaining the highest standards 
-                of quality and precision.
+              With a team of seasoned professionals skilled in Engineering, creative designing, CAD (Computer-Aided
+              Design), CAM (Computer-Aided Manufacturing), and CAE (Computer-Aided Engineering), we bring ideas to
+              life precisly and efficiently. From conceptualization to prototyping and beyond, our holistic approach
+              ensures seamless integration and optimal performance.
+              </p>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              Our expertise in Industrial Machinery, Consumer Products, Automotive, Robotics, and Automation allows us
+              to confidently address complex challenges. Adhering to rigorous quality standards, we employ advanced
+              tools and methodologies to ensure reliability, durability, and compliance with industry regulations.
+              </p>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              Whether you're a startup with a bold vision or an established enterprise seeking to stay ahead of the curve,
+              CADPULSE is your trusted partner. Let's collaborate and unlock the full potential of your ideas, together.
               </p>
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
@@ -461,40 +534,61 @@ function App() {
             {projects.map((project) => (
               <div 
                 key={project.id}
-                className="group cursor-pointer bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
+                className="project-card cursor-pointer bg-white rounded-2xl shadow-lg hover:shadow-2xl overflow-hidden group"
                 onClick={() => setSelectedProject(project)}
               >
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden h-56">
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="project-image w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute top-4 right-4 bg-white bg-opacity-90 px-3 py-1 rounded-full text-xs font-medium text-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  
+                  {/* Category Badge */}
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-gray-700">
                     {project.category}
                   </div>
-                  <div className="absolute bottom-4 right-4 bg-blue-600 p-2 rounded-full text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                    <ExternalLink className="w-4 h-4" />
+                  
+                  {/* Rating Stars */}
+                  <div className="absolute top-4 right-4 flex space-x-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {[...Array(project.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+                  
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold flex items-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      View Details
+                    </div>
                   </div>
                 </div>
                 
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                    {project.title}
-                  </h3>
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                      {project.title}
+                    </h3>
+                    <div className="flex items-center text-sm text-gray-500">
+                      <Clock className="w-4 h-4 mr-1" />
+                      {project.duration}
+                    </div>
+                  </div>
+                  
                   <p className="text-gray-600 mb-4 leading-relaxed">
                     {project.description}
                   </p>
                   
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center text-sm text-gray-500">
-                      <TrendingUp className="w-4 h-4 mr-1" />
-                      <span>View Details</span>
-                    </div>
                     <div className="flex items-center space-x-2">
+                      <TrendingUp className="w-4 h-4 text-green-500" />
+                      <span className="text-sm font-medium text-gray-700">High Impact</span>
+                    </div>
+                    <div className="flex items-center space-x-1">
                       <Award className="w-4 h-4 text-yellow-500" />
-                      <Clock className="w-4 h-4 text-blue-500" />
+                      <Sparkles className="w-4 h-4 text-blue-500" />
                     </div>
                   </div>
                 </div>
@@ -505,8 +599,9 @@ function App() {
           <div className="text-center mt-12">
             <button
               onClick={openWhatsApp}
-              className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center mx-auto group"
+              className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 flex items-center mx-auto group shadow-lg hover:shadow-xl transform hover:scale-105"
             >
+              <Sparkles className="mr-2 w-5 h-5" />
               Discuss Your Project
               <MessageCircle className="ml-2 w-5 h-5 group-hover:scale-110 transition-transform" />
             </button>
@@ -528,26 +623,17 @@ function App() {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
               <div className="w-16 h-1 bg-blue-600 mb-6"></div>
               <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                To empower businesses and innovators by providing exceptional CAD design services that transform 
-                ideas into precise, manufacturable solutions. We are committed to delivering quality, reliability, 
-                and innovation in every project we undertake.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Our mission is to be the trusted partner for all your CAD design needs, ensuring that every 
-                project meets the highest standards of technical excellence and precision.
+              Driven by innovation and fueled by passion, our mission is to redefine the boundaries of design and
+              engineering. We strive to empower businesses with unparalleled solutions that enhance efficiency,
+              reliability, and sustainability.
               </p>
             </div>
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Vision</h2>
               <div className="w-16 h-1 bg-blue-600 mb-6"></div>
               <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                To be the leading CAD design service provider, recognized for our technical expertise, 
-                innovative solutions, and commitment to client success. We envision a future where our 
-                designs contribute to groundbreaking products and technologies.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                We strive to continuously evolve our capabilities and embrace new technologies to stay 
-                at the forefront of the CAD design industry.
+              Revolutionizing industries through cutting-edge product and machinery design, driving innovation
+              forward.
               </p>
             </div>
           </div>
@@ -689,7 +775,11 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-4 md:mb-0">
-              <Settings className="w-6 h-6 text-blue-400 mr-2" />
+              <img 
+                src="/cadpulse-logo.png" 
+                alt="CADPULSE Logo" 
+                className="w-6 h-6 mr-2"
+              />
               <span className="text-xl font-bold">CADPULSE</span>
             </div>
             <p className="text-gray-400 text-sm">
@@ -702,7 +792,7 @@ function App() {
       {/* Floating WhatsApp Button */}
       <button
         onClick={openWhatsApp}
-        className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-110 z-50"
+        className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-110 z-50 animate-bounce-slow"
         aria-label="Contact us on WhatsApp"
       >
         <MessageCircle className="w-6 h-6" />
