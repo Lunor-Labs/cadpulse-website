@@ -7,7 +7,9 @@ export default {
         'ubuntu': ['Ubuntu', 'sans-serif'],
       },
       colors: {
-        accent: '#c1ff72',
+        primary: '#06006e',
+        secondary: '#5e17eb',
+        accent: '#00c2cb',
       },
     },
   },
