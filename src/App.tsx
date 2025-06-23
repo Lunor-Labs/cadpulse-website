@@ -31,7 +31,7 @@ function App() {
       name: "Harith Konara",
       role: "Co-Founder, Director",
       bio: "",
-      image: "/cadpulse-website/piyal.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
+      image: "/cadpulse-website/harith.jpg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
     },
     {
       name: "Dilshan Menaka",
@@ -52,8 +52,7 @@ function App() {
     { name: "2", logo: "/cadpulse-website/2.png" },
     { name: "3", logo: "/cadpulse-website/3.png" },
     { name: "4", logo: "/cadpulse-website/4.png" },
-    { name: "5", logo: "/cadpulse-website/5.png" },
-    { name: "6", logo: "/cadpulse-website/6.png" }
+    { name: "5", logo: "/cadpulse-website/5.png" }
   ];
 
   useEffect(() => {
@@ -131,7 +130,7 @@ function App() {
       <section id="hero" className="relative min-h-screen flex items-center">
         {/* Background Image - Black and White, Flipped */}
         <div 
-          className="absolute top-0 bottom-0 right-0 w-1/2 bg-cover bg-center bg-no-repeat opacity-20"
+          className="absolute top-[-300px] bottom-0 right-0 w-1/2 bg-cover bg-center bg-no-repeat opacity-20"
           style={{ 
             backgroundImage: 'url(/cadpulse-website/scooter.305.png)',
             transform: 'scaleX(-1)',
@@ -168,7 +167,7 @@ function App() {
             </div>
 
             {/* Right Image - Larger Size, Zoomed, Faded & Responsive */}
-            <div className="absolute inset-0 flex justify-end items-center pointer-events-none">
+            <div className="absolute right-[-100px] flex justify-end items-center pointer-events-none">
               <img 
                 src="/cadpulse-website/scooter.305.png" 
                 alt="Off-road Standing Scooter" 
