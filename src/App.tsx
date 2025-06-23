@@ -29,19 +29,19 @@ function App() {
   const teamMembers = [
         {
       name: "Harith Konara",
-      role: "Co-Founder, Director",
+      role: "",
       bio: "",
       image: "/cadpulse-website/harith.jpg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
     },
     {
       name: "Dilshan Menaka",
-      role: "Co-Founder, Director",
+      role: "",
       bio: "",
       image: "/cadpulse-website/dilshan.JPG?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
     },
         {
       name: "Piyal Ranjith",
-      role: "Co-Founder, Director",
+      role: "",
       bio: "",
       image: "/cadpulse-website/piyal.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
     }
@@ -179,14 +179,24 @@ function App() {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* About Section*/}
       <section id="about" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Left Content */}
-            <div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+            
+            {/* Left Column - Image */}
+            <div className="lg:row-span-2">
+              <img 
+                src="/cadpulse-website/about.jpeg" 
+                alt="About Cadpulse" 
+                className="rounded-xl shadow-lg object-cover w-full h-full"
+              />
+            </div>
+
+            {/* Right Column - About Content */}
+            <div className="lg:col-span-2">
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">About Cadpulse</h2>
-              <p className="text-lg text-gray-600 leading-relaxed mb-8">
+              <p className="text-lg text-gray-600 leading-relaxed mb-4">
                 We are a leading SolidWorks design company specializing in precision engineering and CAD modeling. 
                 Our team combines technical expertise with innovative thinking to deliver exceptional design solutions 
                 that meet the highest industry standards.
@@ -197,26 +207,28 @@ function App() {
               </p>
             </div>
 
-            {/* Right Content - Mission & Vision */}
-            <div className="space-y-8">
-              <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-l-4 border-accent">
-                <h3 className="text-2xl font-bold text-primary mb-4">Our Mission</h3>
+            {/* Right Column - Vision and Mission Cards */}
+            <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-accent">
+                <h3 className="text-2xl font-bold text-primary mb-3">Our Mission</h3>
                 <p className="text-gray-600 leading-relaxed">
                   Deliver cutting-edge design solutions with efficiency and precision, helping our clients 
                   bring their innovative ideas to life through expert CAD modeling and engineering analysis.
                 </p>
               </div>
-              <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-l-4 border-secondary">
-                <h3 className="text-2xl font-bold text-primary mb-4">Our Vision</h3>
+              <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-secondary">
+                <h3 className="text-2xl font-bold text-primary mb-3">Our Vision</h3>
                 <p className="text-gray-600 leading-relaxed">
                   To be the most trusted engineering design partner worldwide, setting new standards 
                   in precision, quality, and innovation in the CAD modeling industry.
                 </p>
               </div>
             </div>
+
           </div>
         </div>
       </section>
+
 
       {/* Features Section */}
       <section className="py-20 bg-white">
@@ -276,29 +288,32 @@ function App() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
+
+
+
               {
-                title: "3D CAD Modeling",
+                title: "Product Design & Development",
                 icon: <Cube className="w-8 h-8 text-white" />,
                 color: "from-indigo-500 to-purple-500",
                 border: "border-indigo-500",
                 desc: "SolidWorks-based 3D models with exceptional precision and visual accuracy.",
               },
               {
-                title: "Rapid Prototyping",
+                title: "Industrial Machinery & Automation",
                 icon: <Zap className="w-8 h-8 text-white" />,
                 color: "from-pink-500 to-red-500",
                 border: "border-pink-500",
                 desc: "Speed up your innovation process with quick and functional design iterations.",
               },
               {
-                title: "Simulation & Analysis",
+                title: "Manufacturing Support Services",
                 icon: <BarChart3 className="w-8 h-8 text-white" />,
                 color: "from-blue-500 to-cyan-500",
                 border: "border-blue-500",
                 desc: "Stress testing and performance analysis to ensure robust product behavior.",
               },
               {
-                title: "Manufacturing Support",
+                title: "Design Validation and Technical Documentation",
                 icon: <Wrench className="w-8 h-8 text-white" />,
                 color: "from-green-500 to-emerald-500",
                 border: "border-green-500",
@@ -321,6 +336,66 @@ function App() {
           </div>
         </div>
       </section>
+
+      <section id="projects" className="py-24 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-4xl font-extrabold text-center text-primary mb-12">
+            Featured Projects
+          </h2>
+
+          <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            
+            {[
+              {
+                title: "Precision Engineering",
+                description: "Aerospace-grade components with ultra-tight tolerances.",
+                image: "/cadpulse-website/p1.png",
+                tag: "Aerospace"
+              },
+              {
+                title: "Automotive Design",
+                description: "High-performance engine CAD models for next-gen vehicles.",
+                image: "/images/project2.jpg",
+                tag: "Automotive"
+              },
+              {
+                title: "Industrial Machines",
+                description: "Robust and efficient parts for assembly lines.",
+                image: "/images/project3.jpg",
+                tag: "Manufacturing"
+              }
+            ].map((project, index) => (
+              <div
+                key={index}
+                className="relative h-80 rounded-3xl overflow-hidden group shadow-xl transition-transform transform hover:scale-[1.02]"
+              >
+                {/* Background Image */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-all duration-500 group-hover:scale-105 group-hover:brightness-90"
+                  style={{ backgroundImage: `url(${project.image})` }}
+                ></div>
+
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/10 z-0"></div>
+
+                {/* Content */}
+                <div className="relative z-10 p-6 h-full flex flex-col justify-end text-white backdrop-blur-sm bg-white/5 rounded-3xl">
+                  <span className="text-xs uppercase tracking-wider bg-accent text-white py-1 px-3 rounded-full w-fit mb-3">
+                    {project.tag}
+                  </span>
+                  <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
+                  <p className="text-sm text-gray-200 leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+
+          </div>
+        </div>
+      </section>
+
+
 
 
       {/* Client Logos Section */}
@@ -403,35 +478,38 @@ function App() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section id="team" className="py-20 bg-white">
+      <section id="team" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">Our Team</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Meet the experts behind our precision engineering solutions
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <div key={index} className="text-center group">
-                <div className="relative mb-6">
-                  <img 
-                    src={member.image}
-                    alt={member.name}
-                    className="w-32 h-32 rounded-full object-cover mx-auto grayscale group-hover:grayscale-0 transition-all duration-300"
-                  />
-                  <div className="absolute inset-0 rounded-full bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-32 h-32 mx-auto" />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            
+            {/* Left Side: Large Heading Only */}
+            <div className="flex items-center">
+              <h2 className="text-6xl md:text-7xl font-extrabold text-primary leading-tight">
+                Meet Our Founders
+              </h2>
+            </div>
+
+            {/* Right Side: Founder Images */}
+            <div className="flex justify-center gap-6">
+              {teamMembers.map((member, index) => (
+                <div key={index} className="text-center group max-w-[100px]">
+                  <div className="relative mb-2">
+                    <img 
+                      src={member.image}
+                      alt={member.name}
+                      className="w-24 h-24 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 mx-auto"
+                    />
+                    <div className="absolute inset-0 rounded-full bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-24 h-24 mx-auto" />
+                  </div>
+                  <h4 className="text-xs font-semibold text-primary">{member.name}</h4>
+                  <p className="text-[10px] text-gray-500">{member.role}</p>
                 </div>
-                <h3 className="text-xl font-bold text-primary mb-2">{member.name}</h3>
-                <p className="text-accent font-medium mb-3">{member.role}</p>
-                <p className="text-gray-600">{member.bio}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
+
 
       {/* Contact Section - Minimalist & Modern */}
       <section id="contact" className="py-24 bg-white text-gray-900">
