@@ -27,23 +27,23 @@ function App() {
   ];
 
   const teamMembers = [
+        {
+      name: "Harith Konara",
+      role: "Co-Founder, Director",
+      bio: "",
+      image: "/cadpulse-website/piyal.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
+    },
     {
+      name: "Dilshan Menaka",
+      role: "Co-Founder, Director",
+      bio: "",
+      image: "/cadpulse-website/dilshan.JPG?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
+    },
+        {
       name: "Piyal Ranjith",
       role: "Co-Founder, Director",
       bio: "",
-      image: "/cadpulse-website/piyal.jpeg"
-    },
-    {
-      name: "Lisa Park",
-      role: "Simulation Specialist",
-      bio: "Expert in FEA analysis and stress testing methodologies",
-      image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
-    },
-    {
-      name: "James Wilson",
-      role: "Project Manager",
-      bio: "Ensuring seamless delivery and client satisfaction",
-      image: "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
+      image: "/cadpulse-website/piyal.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
     }
   ];
 
@@ -131,13 +131,12 @@ function App() {
       <section id="hero" className="relative min-h-screen flex items-center">
         {/* Background Image - Black and White, Flipped */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          className="absolute top-0 bottom-0 right-0 w-1/2 bg-cover bg-center bg-no-repeat opacity-20"
           style={{ 
             backgroundImage: 'url(/cadpulse-website/scooter.305.png)',
             transform: 'scaleX(-1)',
             filter: 'grayscale(100%)',
-            backgroundSize: '100%',
-            backgroundPosition: '90% center'  // Moves image more to the right
+            backgroundSize: '200%'
           }}
         />
         
