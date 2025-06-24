@@ -1,9 +1,202 @@
 import React, { useState, useEffect } from 'react';
-import { Settings, CheckCircle, Truck, Users, Cuboid as Cube, Zap, BarChart3, Wrench, ChevronLeft, ChevronRight, Menu, X, MessageCircle, Phone, Mail } from 'lucide-react';
+import { Calendar,Sparkles,ExternalLink,Star,TrendingUp,Clock,Award ,Target,Settings, CheckCircle, Truck, Users, Cuboid as Cube, Zap, BarChart3, Wrench, ChevronLeft, ChevronRight, Menu, X, MessageCircle, Phone, Mail } from 'lucide-react';
+
 
 function App() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<any>(null);
+
+  const projects = [
+    {
+      id: 1,
+      title: "Scooter",
+      description: "Scooter Design",
+      image: "/cadpulse-website/scooter.306.png",
+      category: "Industrial Machinery",
+      duration: "8 weeks",
+      rating: 5,
+      details: "Complete redesign of industrial mixing equipment with automated controls, resulting in 35% productivity increase and 20% reduction in energy consumption. The project involved advanced 3D modeling, stress analysis, and integration of smart control systems.",
+      metrics: [
+        { label: "Productivity Increase", value: "35%", icon: <TrendingUp className="w-5 h-5" /> },
+        { label: "Energy Reduction", value: "20%", icon: <Zap className="w-5 h-5" /> },
+        { label: "Project Duration", value: "8 weeks", icon: <Clock className="w-5 h-5" /> }
+      ],
+      technologies: ["SolidWorks", "AutoCAD", "ANSYS", "PLC Programming"],
+      client: "Manufacturing Corp"
+    },
+    {
+      id: 2,
+      title: "Precision Manufacturing Jig",
+      description: "Reduced assembly time by 50% with custom tooling",
+      image: "/project-manufacturing-jig.jpg",
+      category: "Manufacturing Support",
+      duration: "6 weeks",
+      rating: 5,
+      details: "Custom-designed manufacturing jig for precision assembly operations, dramatically improving efficiency and consistency in production. Features modular design for multiple product variants.",
+      metrics: [
+        { label: "Assembly Time Reduction", value: "50%", icon: <Clock className="w-5 h-5" /> },
+        { label: "Quality Improvement", value: "99.8%", icon: <Award className="w-5 h-5" /> },
+        { label: "ROI Achievement", value: "6 months", icon: <BarChart3 className="w-5 h-5" /> }
+      ],
+      technologies: ["Fusion 360", "CNC Programming", "Quality Control"],
+      client: "Precision Industries"
+    },
+    {
+      id: 3,
+      title: "Consumer Electronics Housing",
+      description: "Optimized design for mass production scalability",
+      image: "/project-electronics-housing.jpg",
+      category: "Product Design",
+      duration: "10 weeks",
+      rating: 5,
+      details: "Innovative housing design for consumer electronics with focus on manufacturability, cost optimization, and aesthetic appeal. Includes thermal management and EMI shielding considerations.",
+      metrics: [
+        { label: "Cost Reduction", value: "25%", icon: <TrendingUp className="w-5 h-5" /> },
+        { label: "Production Speed", value: "+40%", icon: <Zap className="w-5 h-5" /> },
+        { label: "Material Efficiency", value: "30%", icon: <Target className="w-5 h-5" /> }
+      ],
+      technologies: ["Rhino 3D", "KeyShot", "Injection Molding Analysis"],
+      client: "Tech Innovations Ltd"
+    },
+    {
+      id: 4,
+      title: "Automotive Component Reverse Engineering",
+      description: "Recreated legacy parts with improved materials",
+      image: "/project-automotive-component.jpg",
+      category: "Reverse Engineering",
+      duration: "12 weeks",
+      rating: 5,
+      details: "Reverse engineered discontinued automotive components with material upgrades and performance enhancements for extended service life. Included comprehensive testing and validation.",
+      metrics: [
+        { label: "Durability Increase", value: "60%", icon: <Award className="w-5 h-5" /> },
+        { label: "Weight Reduction", value: "15%", icon: <TrendingUp className="w-5 h-5" /> },
+        { label: "Cost Savings", value: "40%", icon: <BarChart3 className="w-5 h-5" /> }
+      ],
+      technologies: ["3D Scanning", "Material Analysis", "FEA Simulation"],
+      client: "Auto Parts Solutions"
+    },
+    {
+      id: 5,
+      title: "Packaging Machinery Upgrade",
+      description: "Modernized controls for Industry 4.0 compliance",
+      image: "/project-packaging-machinery.jpg",
+      category: "Industrial Machinery",
+      duration: "14 weeks",
+      rating: 5,
+      details: "Complete modernization of packaging machinery with smart controls, IoT integration, and predictive maintenance capabilities. Achieved Industry 4.0 compliance with real-time monitoring.",
+      metrics: [
+        { label: "Efficiency Gain", value: "45%", icon: <TrendingUp className="w-5 h-5" /> },
+        { label: "Downtime Reduction", value: "70%", icon: <Clock className="w-5 h-5" /> },
+        { label: "Maintenance Savings", value: "55%", icon: <Wrench className="w-5 h-5" /> }
+      ],
+      technologies: ["Industrial IoT", "HMI Design", "Predictive Analytics"],
+      client: "PackTech Systems"
+    },
+    {
+      id: 6,
+      title: "Medical Device Prototype",
+      description: "FDA-compliant design with enhanced ergonomics",
+      image: "/project-medical-device.jpg",
+      category: "Product Design",
+      duration: "16 weeks",
+      rating: 5,
+      details: "Precision medical device design meeting FDA compliance standards with focus on user ergonomics and manufacturing efficiency. Includes biocompatible material selection and sterilization considerations.",
+      metrics: [
+        { label: "Compliance Rating", value: "100%", icon: <CheckCircle className="w-5 h-5" /> },
+        { label: "User Satisfaction", value: "95%", icon: <Users className="w-5 h-5" /> },
+        { label: "Time to Market", value: "-30%", icon: <Clock className="w-5 h-5" /> }
+      ],
+      technologies: ["Medical CAD", "Biocompatible Materials", "FDA Validation"],
+      client: "MedTech Innovations"
+    }
+  ];
+
+  const ProjectModal = ({ project, onClose }: { project: any, onClose: () => void }) => {
+    if (!project) return null;
+
+    return (
+      <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
+        <div className="bg-white rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto modal-enter">
+          <div className="relative">
+            <img 
+              src={project.image} 
+              alt={project.title}
+              className="w-full h-80 object-cover rounded-t-2xl"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-t-2xl"></div>
+            <button
+              onClick={onClose}
+              className="absolute top-6 right-6 bg-white bg-opacity-90 hover:bg-opacity-100 p-3 rounded-full transition-all duration-200 hover:scale-110"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <div className="absolute bottom-6 left-6 text-white">
+              <div className="flex items-center space-x-2 mb-2">
+                <span className="bg-blue-600 px-3 py-1 rounded-full text-sm font-medium">
+                  {project.category}
+                </span>
+                <div className="flex items-center space-x-1">
+                  {[...Array(project.rating)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+              </div>
+              <h3 className="text-3xl font-bold mb-2">{project.title}</h3>
+              <div className="flex items-center space-x-4 text-sm opacity-90">
+                <div className="flex items-center">
+                  <Calendar className="w-4 h-4 mr-1" />
+                  {project.duration}
+                </div>
+                <div className="flex items-center">
+                  <Users className="w-4 h-4 mr-1" />
+                  {project.client}
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="p-8">
+            <p className="text-lg text-gray-600 mb-8 leading-relaxed">{project.details}</p>
+            
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              {project.metrics.map((metric: any, index: number) => (
+                <div key={index} className="text-center p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-100 hover:shadow-lg transition-shadow">
+                  <div className="flex justify-center mb-3 text-blue-600">
+                    {metric.icon}
+                  </div>
+                  <div className="text-3xl font-bold text-blue-600 mb-2 metric-value">{metric.value}</div>
+                  <div className="text-sm text-gray-600 font-medium">{metric.label}</div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mb-8">
+              <h4 className="text-xl font-semibold text-gray-900 mb-4">Technologies Used</h4>
+              <div className="flex flex-wrap gap-2">
+                {project.technologies.map((tech: string, index: number) => (
+                  <span key={index} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+            
+            <div className="flex justify-center">
+              <button
+                onClick={openWhatsApp}
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 flex items-center shadow-lg hover:shadow-xl transform hover:scale-105"
+              >
+                <Sparkles className="mr-2 w-5 h-5" />
+                Discuss Similar Project
+                <MessageCircle className="ml-2 w-5 h-5" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   const testimonials = [
     {
@@ -52,7 +245,8 @@ function App() {
     { name: "2", logo: "/cadpulse-website/2.png" },
     { name: "3", logo: "/cadpulse-website/3.png" },
     { name: "4", logo: "/cadpulse-website/4.png" },
-    { name: "5", logo: "/cadpulse-website/5.png" }
+    { name: "5", logo: "/cadpulse-website/5.png" },
+    { name: "6", logo: "/cadpulse-website/6.png" }
   ];
 
   useEffect(() => {
@@ -91,6 +285,7 @@ function App() {
               <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-accent transition-colors">About</button>
               <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-accent transition-colors">Services</button>
               <button onClick={() => scrollToSection('team')} className="text-gray-700 hover:text-accent transition-colors">Team</button>
+              <button onClick={() => scrollToSection('projects')} className="text-gray-700 hover:text-accent transition-colors">Projects</button>
               <button onClick={() => scrollToSection('contact')} className="bg-accent text-white px-4 py-2 rounded-lg hover:bg-accent/90 transition-colors">Contact</button>
             </div>
 
@@ -179,21 +374,23 @@ function App() {
         </div>
       </section>
 
-      {/* About Section*/}
+      {/* About Section */}
       <section id="about" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-2 gap-10 items-start">
             
-            {/* Left Column - Image */}
-            <div className="lg:row-span-2">
-              <img 
-                src="/cadpulse-website/about.jpeg" 
-                alt="About Cadpulse" 
-                className="rounded-xl shadow-lg object-cover w-full h-full"
-              />
+            {/* Left Column - Full Height Image */}
+            <div className="lg:row-span-2 h-full">
+              <div className="w-full h-full">
+                <img 
+                  src="/cadpulse-website/about.jpeg" 
+                  alt="About Cadpulse" 
+                  className="rounded-xl shadow-lg object-cover w-full h-full"
+                />
+              </div>
             </div>
 
-            {/* Right Column - About Content */}
+            {/* Top Right - About Content */}
             <div className="lg:col-span-2">
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">About Cadpulse</h2>
               <p className="text-lg text-gray-600 leading-relaxed mb-4">
@@ -207,7 +404,7 @@ function App() {
               </p>
             </div>
 
-            {/* Right Column - Vision and Mission Cards */}
+            {/* Bottom Right - Mission and Vision */}
             <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-accent">
                 <h3 className="text-2xl font-bold text-primary mb-3">Our Mission</h3>
@@ -233,50 +430,62 @@ function App() {
       {/* Features Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">Why Choose Cadpulse</h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-              <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4">
-                <Settings className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-primary mb-3">Precision Focus</h3>
-              <p className="text-gray-600">Every design meets exact specifications with meticulous attention to detail.</p>
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-stretch">
             
-            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-              <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center mb-4">
-                <CheckCircle className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-primary mb-3">Quality Assured</h3>
-              <p className="text-gray-600">Rigorous quality control processes ensure exceptional results every time.</p>
+            {/* Left: Large, Full-Height Title */}
+            <div className="lg:col-span-2 flex items-center">
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-primary leading-tight">
+                Why Choose<br />Cadpulse
+              </h2>
             </div>
-            
-            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-              <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4">
-                <Truck className="w-6 h-6 text-white" />
+
+            {/* Right: Feature Cards */}
+            <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-8">
+              
+              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4">
+                  <Settings className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-primary mb-3">Precision Focus</h3>
+                <p className="text-gray-600">Every design meets exact specifications with meticulous attention to detail.</p>
               </div>
-              <h3 className="text-xl font-bold text-primary mb-3">Fast Delivery</h3>
-              <p className="text-gray-600">Quick turnaround without compromise on quality or precision.</p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-              <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center mb-4">
-                <Users className="w-6 h-6 text-white" />
+
+              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center mb-4">
+                  <CheckCircle className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-primary mb-3">Quality Assured</h3>
+                <p className="text-gray-600">Rigorous quality control processes ensure exceptional results every time.</p>
               </div>
-              <h3 className="text-xl font-bold text-primary mb-3">Expert Team</h3>
-              <p className="text-gray-600">Skilled professionals dedicated to excellence in engineering design.</p>
+
+              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4">
+                  <Truck className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-primary mb-3">Fast Delivery</h3>
+                <p className="text-gray-600">Quick turnaround without compromise on quality or precision.</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center mb-4">
+                  <Users className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-primary mb-3">Expert Team</h3>
+                <p className="text-gray-600">Skilled professionals dedicated to excellence in engineering design.</p>
+              </div>
+
             </div>
           </div>
         </div>
       </section>
 
+
+
       {/* Services Section - Modern & Attractive */}
       <section id="services" className="relative py-24 bg-gradient-to-b from-gray-50 via-white to-gray-100 overflow-hidden">
-        {/* Optional Decorative Background */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('/pattern.svg')] bg-repeat z-0"></div>
+        
+        {/* Decorative Background Image */}
+        <div className="absolute inset-0 z-0 bg-[url('/cadpulse-website/cadpulse-logo.png')] bg-no-repeat bg-contain bg-right opacity-10 pointer-events-none"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -288,9 +497,6 @@ function App() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-
-
-
               {
                 title: "Product Design & Development",
                 icon: <Cube className="w-8 h-8 text-white" />,
@@ -337,63 +543,102 @@ function App() {
         </div>
       </section>
 
-      <section id="projects" className="py-24 bg-gradient-to-br from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-extrabold text-center text-primary mb-12">
-            Featured Projects
-          </h2>
 
-          <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-            
-            {[
-              {
-                title: "Precision Engineering",
-                description: "Aerospace-grade components with ultra-tight tolerances.",
-                image: "/cadpulse-website/p1.png",
-                tag: "Aerospace"
-              },
-              {
-                title: "Automotive Design",
-                description: "High-performance engine CAD models for next-gen vehicles.",
-                image: "/images/project2.jpg",
-                tag: "Automotive"
-              },
-              {
-                title: "Industrial Machines",
-                description: "Robust and efficient parts for assembly lines.",
-                image: "/images/project3.jpg",
-                tag: "Manufacturing"
-              }
-            ].map((project, index) => (
-              <div
-                key={index}
-                className="relative h-80 rounded-3xl overflow-hidden group shadow-xl transition-transform transform hover:scale-[1.02]"
+      {/* Projects Section */}
+      <section id="projects" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Projects We've Delivered</h2>
+            <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Discover how we've helped clients achieve remarkable results through innovative CAD solutions and engineering excellence
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project) => (
+              <div 
+                key={project.id}
+                className="project-card cursor-pointer bg-white rounded-2xl shadow-lg hover:shadow-2xl overflow-hidden group"
+                onClick={() => setSelectedProject(project)}
               >
-                {/* Background Image */}
-                <div
-                  className="absolute inset-0 bg-cover bg-center transition-all duration-500 group-hover:scale-105 group-hover:brightness-90"
-                  style={{ backgroundImage: `url(${project.image})` }}
-                ></div>
-
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/10 z-0"></div>
-
-                {/* Content */}
-                <div className="relative z-10 p-6 h-full flex flex-col justify-end text-white backdrop-blur-sm bg-white/5 rounded-3xl">
-                  <span className="text-xs uppercase tracking-wider bg-accent text-white py-1 px-3 rounded-full w-fit mb-3">
-                    {project.tag}
-                  </span>
-                  <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-sm text-gray-200 leading-relaxed">
+                <div className="relative overflow-hidden h-56">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="project-image w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  
+                  {/* Category Badge */}
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-gray-700">
+                    {project.category}
+                  </div>
+                  
+                  {/* Rating Stars */}
+                  <div className="absolute top-4 right-4 flex space-x-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {[...Array(project.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+                  
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold flex items-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      View Details
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                      {project.title}
+                    </h3>
+                    <div className="flex items-center text-sm text-gray-500">
+                      <Clock className="w-4 h-4 mr-1" />
+                      {project.duration}
+                    </div>
+                  </div>
+                  
+                  <p className="text-gray-600 mb-4 leading-relaxed">
                     {project.description}
                   </p>
+                  
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-2">
+                      <TrendingUp className="w-4 h-4 text-green-500" />
+                      <span className="text-sm font-medium text-gray-700">High Impact</span>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      <Award className="w-4 h-4 text-yellow-500" />
+                      <Sparkles className="w-4 h-4 text-blue-500" />
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
+          </div>
 
+          <div className="text-center mt-12">
+            <button
+              onClick={openWhatsApp}
+              className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 flex items-center mx-auto group shadow-lg hover:shadow-xl transform hover:scale-105"
+            >
+              <Sparkles className="mr-2 w-5 h-5" />
+              Discuss Your Project
+              <MessageCircle className="ml-2 w-5 h-5 group-hover:scale-110 transition-transform" />
+            </button>
           </div>
         </div>
       </section>
+
+      {/* Project Modal */}
+      <ProjectModal 
+        project={selectedProject} 
+        onClose={() => setSelectedProject(null)} 
+      />
 
 
 
@@ -478,84 +723,107 @@ function App() {
         </div>
       </section>
 
-      <section id="team" className="py-16 bg-white">
+       {/* Team Section */}
+      <section id="team" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            
-            {/* Left Side: Large Heading Only */}
-            <div className="flex items-center">
-              <h2 className="text-6xl md:text-7xl font-extrabold text-primary leading-tight">
-                Meet Our Founders
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            {/* Left Side - Title */}
+            <div className="lg:w-1/3">
+              <h2 className="text-5xl lg:text-6xl font-bold text-[#06006e] leading-tight">
+                Meet Our<br />
+                <span className="text-[#5e17eb]">Founders</span>
               </h2>
             </div>
-
-            {/* Right Side: Founder Images */}
-            <div className="flex justify-center gap-6">
-              {teamMembers.map((member, index) => (
-                <div key={index} className="text-center group max-w-[100px]">
-                  <div className="relative mb-2">
+            
+            {/* Right Side - Team Members */}
+            <div className="lg:w-2/3">
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-12 sm:gap-16">
+                {/* Team Member 1 */}
+                <div className="text-center group">
+                  <div className="relative mb-4">
                     <img 
-                      src={member.image}
-                      alt={member.name}
-                      className="w-24 h-24 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 mx-auto"
+                      src="/cadpulse-website/harith.jpg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" 
+                      alt="Harith Konara" 
+                      className="w-28 h-28 rounded-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300 border-4 border-gray-200 group-hover:border-[#06006e]"
                     />
-                    <div className="absolute inset-0 rounded-full bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-24 h-24 mx-auto" />
                   </div>
-                  <h4 className="text-xs font-semibold text-primary">{member.name}</h4>
-                  <p className="text-[10px] text-gray-500">{member.role}</p>
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">Harith Konara</h3>
                 </div>
-              ))}
+
+                {/* Team Member 2 */}
+                <div className="text-center group">
+                  <div className="relative mb-4">
+                    <img 
+                      src="/cadpulse-website/dilshan.JPG?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" 
+                      alt="Dilshan Menaka" 
+                      className="w-28 h-28 rounded-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300 border-4 border-gray-200 group-hover:border-[#5e17eb]"
+                    />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">Dilshan Menaka</h3>
+                </div>
+
+                {/* Team Member 3 */}
+                <div className="text-center group">
+                  <div className="relative mb-4">
+                    <img 
+                      src="/cadpulse-website/piyal.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" 
+                      alt="Piyal Ranjith" 
+                      className="w-28 h-28 rounded-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300 border-4 border-gray-200 group-hover:border-[#00c2cb]"
+                    />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">Piyal Ranjith</h3>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
+       {/* Contact Section */}
+      <section id="contact" className="py-20 bg-gray-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6">Get In Touch</h2>
+            <div className="w-24 h-1 bg-blue-500 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Ready to bring your ideas to life? Contact us today for a consultation
+            </p>
+          </div>
 
-      {/* Contact Section - Minimalist & Modern */}
-      <section id="contact" className="py-24 bg-white text-gray-900">
-        <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center">
-          <h2 className="text-4xl font-extrabold mb-6">Ready to Start Your Project?</h2>
-          <p className="text-lg text-gray-600 mb-12 max-w-xl mx-auto">
-            Let's bring your engineering vision to life with precision and expertise.
-          </p>
-          <button
-            onClick={openWhatsApp}
-            className="inline-block bg-black text-white px-10 py-3 rounded-md text-lg font-semibold transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-black/30"
-          >
-            Get In Touch via WhatsApp
-          </button>
-
-          <div className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-16 text-center">
-            {/* WhatsApp */}
-            <div className="space-y-3">
-              <div className="mx-auto w-12 h-12 flex items-center justify-center rounded-full bg-black text-white">
-                <MessageCircle className="w-6 h-6" />
+          <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <h3 className="text-2xl font-semibold mb-6">Let's Discuss Your Project</h3>
+              <p className="text-gray-300 mb-8 leading-relaxed">
+                Whether you need product design, industrial machinery development, or technical drafting, 
+                our team is ready to help. Reach out to us via WhatsApp for immediate assistance or 
+                to schedule a detailed consultation.
+              </p>
+              
+              <div className="space-y-4">
+                <div className="flex items-center">
+                  <Phone className="w-5 h-5 text-blue-400 mr-3" />
+                  <span>+94 788 638 718</span>
+                </div>
+                <div className="flex items-center">
+                  <Mail className="w-5 h-5 text-blue-400 mr-3" />
+                  <span>info@cadpulse.com</span>
+                </div>
               </div>
-              <h3 className="text-lg font-medium">WhatsApp</h3>
+            </div>
+
+            <div className="bg-gray-800 p-8 rounded-xl">
+              <h3 className="text-xl font-semibold mb-6">Quick Contact</h3>
+              <p className="text-gray-300 mb-6">
+                Click the button below to start a WhatsApp conversation with our team. 
+                We'll respond quickly to discuss your project requirements.
+              </p>
               <button
                 onClick={openWhatsApp}
-                className="text-sm text-gray-500 hover:text-black transition-colors"
+                className="w-full bg-green-600 text-white px-6 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center justify-center"
               >
-                +1 (555) 123-4567
+                <MessageCircle className="w-5 h-5 mr-2" />
+                Start WhatsApp Chat
               </button>
-            </div>
-
-            {/* Phone */}
-            <div className="space-y-3">
-              <div className="mx-auto w-12 h-12 flex items-center justify-center rounded-full bg-gray-200 text-gray-700">
-                <Phone className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-medium">Phone</h3>
-              <p className="text-sm text-gray-500">+1 (555) 123-4567</p>
-            </div>
-
-            {/* Email */}
-            <div className="space-y-3">
-              <div className="mx-auto w-12 h-12 flex items-center justify-center rounded-full bg-gray-200 text-gray-700">
-                <Mail className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-medium">Email</h3>
-              <p className="text-sm text-gray-500">hello@cadpulse.com</p>
             </div>
           </div>
         </div>
