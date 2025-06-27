@@ -50,110 +50,25 @@ function App() {
     }
   ];
 
-  const ProjectModal = ({ project, onClose }: { project: any, onClose: () => void }) => {
-    if (!project) return null;
-
-    return (
-      <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
-        <div className="bg-white rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto modal-enter">
-          <div className="relative">
-            <img 
-              src={project.image} 
-              alt={project.title}
-              className="w-full h-80 object-cover rounded-t-2xl"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-t-2xl"></div>
-            <button
-              onClick={onClose}
-              className="absolute top-6 right-6 bg-white bg-opacity-90 hover:bg-opacity-100 p-3 rounded-full transition-all duration-200 hover:scale-110"
-            >
-              <X className="w-6 h-6" />
-            </button>
-            <div className="absolute bottom-6 left-6 text-white">
-              <div className="flex items-center space-x-2 mb-2">
-                <span className="bg-blue-600 px-3 py-1 rounded-full text-sm font-medium">
-                  {project.category}
-                </span>
-                <div className="flex items-center space-x-1">
-                  {[...Array(project.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-              </div>
-              <h3 className="text-3xl font-bold mb-2">{project.title}</h3>
-              <div className="flex items-center space-x-4 text-sm opacity-90">
-                <div className="flex items-center">
-                  <Calendar className="w-4 h-4 mr-1" />
-                  {project.duration}
-                </div>
-                <div className="flex items-center">
-                  <Users className="w-4 h-4 mr-1" />
-                  {project.client}
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="p-8">
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">{project.details}</p>
-            
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              {project.metrics.map((metric: any, index: number) => (
-                <div key={index} className="text-center p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-100 hover:shadow-lg transition-shadow">
-                  <div className="flex justify-center mb-3 text-blue-600">
-                    {metric.icon}
-                  </div>
-                  <div className="text-3xl font-bold text-blue-600 mb-2 metric-value">{metric.value}</div>
-                  <div className="text-sm text-gray-600 font-medium">{metric.label}</div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mb-8">
-              <h4 className="text-xl font-semibold text-gray-900 mb-4">Technologies Used</h4>
-              <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech: string, index: number) => (
-                  <span key={index} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-            
-            <div className="flex justify-center">
-              <button
-                onClick={openWhatsApp}
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 flex items-center shadow-lg hover:shadow-xl transform hover:scale-105"
-              >
-                <Sparkles className="mr-2 w-5 h-5" />
-                Discuss Similar Project
-                <MessageCircle className="ml-2 w-5 h-5" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
+ 
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      role: "Engineering Manager at TechCorp",
-      quote: "CADPULSE truly impressed me with their creativity and unmatched attention to detail! Their professionalism shone through in every aspect, and working with them was a breeze thanks to their proactive communication and excellent cooperation. Highly recommend CADPULSE for anyone in need of top-tier industrial and product design.",
-      image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+      name: "Stephen brook",
+      role: "",
+      quote: "CADPULSE team was always open to communicate. The physical project—based on their plans—was completed yesterday, and they were with us every step of the way. Their thorough planning and detailed drawings saved us both time and money. I’d be happy to work with CADPULSE again",
+      image: "/cadpulse-website/stephen.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
     },
     {
-      name: "Michael Chen",
-      role: "Product Designer at InnovateLab",
-      quote: "Working with Cadpulse has been a game-changer for our design process. Their expertise in SolidWorks and precision engineering is unmatched.",
-      image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+      name: "Leon Kaplun",
+      role: "",
+      quote: "I highly recommend CADPULSE! It’s rare to find such a professional mechanical engineering service on a remote basis. They quickly understood all my requirements, saving me valuable time. Extremely patient and attentive to every customer need. I’ve used their service multiple times and will definitely continue to do so. Thank you very much! ",
+      image: "/cadpulse-website/Leon.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
     },
     {
-      name: "Emily Rodriguez",
-      role: "Manufacturing Director at ProBuild",
-      quote: "The simulation and stress analysis provided by Cadpulse saved us months of development time and prevented costly manufacturing errors.",
-      image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+      name: "Christopher Scheiene",
+      role: "CEO Movelio",
+      quote: "CADPULSE did an exceptional job! Their attention to detail was remarkable, ensuring every aspect of the project met my expectations. The professionalism of their work stood out, reflecting true expertise and dedication to high-quality results. The team was polite, responsive, and easy to communicate with throughout the process, promptly addressing every question and revision. I was especially impressed by their ability to deliver on time without compromising quality. I highly recommend CADPULSE for anyone seeking a reliable and skilled design partner. Thank you for the excellent work!",
+      image: "/cadpulse-website/Christopher.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
     }
   ];
 
@@ -299,7 +214,7 @@ function App() {
             </div>
 
             {/* Right Image - Larger Size, Zoomed, Faded & Responsive */}
-            <div className="absolute right-[-100px] flex justify-end items-center pointer-events-none">
+            <div className="absolute right-[-0px] flex justify-end items-center pointer-events-none">
               <img 
                 src="/cadpulse-website/scooter.305.png" 
                 alt="Off-road Standing Scooter" 
@@ -422,7 +337,7 @@ function App() {
       <section id="services" className="relative py-24 bg-gradient-to-b from-gray-100 via-white to-gray-200 overflow-hidden">
         {/* Decorative Background Image */}
         <div className="absolute inset-0 bg-[url('/cadpulse-website/service-bg.jpg')] bg-cover bg-center opacity-100 pointer-events-none">
-          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="absolute inset-0 bg-black/70"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -436,29 +351,29 @@ function App() {
               {
                 title: "Product Design & Development",
                 icon: <Cube className="w-8 h-8 text-white" />,
-                color: "from-indigo-500 to-purple-500",
-                border: "border-indigo-500",
+                color: "from-blue-500",
+                border: "",
                 desc: "SolidWorks-based 3D models with exceptional precision and visual accuracy.",
               },
               {
                 title: "Industrial Machinery & Automation",
                 icon: <Zap className="w-8 h-8 text-white" />,
-                color: "from-pink-500 to-red-500",
-                border: "border-pink-500",
+                color: "from-blue-600",
+                border: "",
                 desc: "Speed up your innovation process with quick and functional design iterations.",
               },
               {
                 title: "Manufacturing Support Services",
                 icon: <BarChart3 className="w-8 h-8 text-white" />,
-                color: "from-blue-500 to-cyan-500",
-                border: "border-blue-500",
+                color: "from-blue-700",
+                border: "",
                 desc: "Stress testing and performance analysis to ensure robust product behavior.",
               },
               {
                 title: "Design Validation and Technical Documentation",
                 icon: <Wrench className="w-8 h-8 text-white" />,
-                color: "from-green-500 to-emerald-500",
-                border: "border-green-500",
+                color: "from-blue-800",
+                border: "",
                 desc: "Optimization support for manufacturability, reducing cost and complexity.",
               }
             ].map((service, index) => (
@@ -551,45 +466,48 @@ function App() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
           <div className="relative max-w-4xl mx-auto">
-            <div className="bg-white rounded-xl shadow-lg p-8 md:p-12">
-              <div className="flex flex-col md:flex-row items-center gap-8">
-                <img 
-                  src={testimonials[currentTestimonial].image}
-                  alt={testimonials[currentTestimonial].name}
-                  className="w-24 h-24 rounded-full object-cover grayscale hover:grayscale-0 transition-all"
-                />
-                <div className="flex-1 text-center md:text-left">
-                  <p className="text-lg text-gray-600 mb-6 italic">
-                    "{testimonials[currentTestimonial].quote}"
-                  </p>
-                  <div>
-                    <h4 className="text-xl font-bold text-primary">{testimonials[currentTestimonial].name}</h4>
-                    <p className="text-accent font-medium">{testimonials[currentTestimonial].role}</p>
-                  </div>
+            <div className="bg-white rounded-xl shadow-lg p-8 md:p-12 relative">
+              {/* Image absolutely positioned, vertically centered */}
+              <img
+                src={testimonials[currentTestimonial].image}
+                alt={testimonials[currentTestimonial].name}
+                className="w-24 h-24 rounded-full object-cover grayscale hover:grayscale-0 transition-all absolute left-8 top-1/2 -translate-y-1/2"
+              />
+              
+              {/* Text content with left padding so it doesn’t overlap image */}
+              <div className="pl-32 text-center md:text-left">
+                <p className="text-lg text-gray-600 italic mb-6">
+                  "{testimonials[currentTestimonial].quote}"
+                </p>
+                <div>
+                  <h4 className="text-xl font-bold text-primary">{testimonials[currentTestimonial].name}</h4>
+                  <p className="text-accent font-medium">{testimonials[currentTestimonial].role}</p>
                 </div>
               </div>
             </div>
-            
+
+            {/* Navigation buttons */}
             <button 
               onClick={() => setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
               className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-accent hover:text-white transition-colors"
+              aria-label="Previous testimonial"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
-            
+
             <button 
               onClick={() => setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)}
               className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-accent hover:text-white transition-colors"
+              aria-label="Next testimonial"
             >
               <ChevronRight className="w-6 h-6" />
             </button>
           </div>
-          
+
+          {/* Pagination dots */}
           <div className="flex justify-center mt-8 space-x-2">
             {testimonials.map((_, index) => (
               <button
@@ -598,11 +516,13 @@ function App() {
                 className={`w-3 h-3 rounded-full transition-colors ${
                   index === currentTestimonial ? 'bg-accent' : 'bg-gray-300'
                 }`}
+                aria-label={`Select testimonial ${index + 1}`}
               />
             ))}
           </div>
         </div>
       </section>
+
 
        {/* Team Section */}
       <section id="team" className="py-20 bg-white">
@@ -661,7 +581,7 @@ function App() {
       </section>
 
      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gray-900 text-white">
+      <footer id="contact" className="py-20 bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
             
@@ -806,40 +726,11 @@ function App() {
             </div>
           </div>
         </div>
-      </section>
+      </footer>
 
  
 
-      {/* Footer */}
-      <footer className="bg-black text-white py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
-            
-            {/* Logo */}
-            <div className="flex items-center justify-center md:justify-start">
-              <img
-                src="/cadpulse-website/footer logo.png"
-                alt="Cadpulse"
-                className="h-20 w-100 object-contain"
-              />
-            </div>
-
-            {/* Text */}
-            <p className="text-sm text-gray-400">
-              © 2025 Cadpulse. All rights reserved. Developed by{' '}
-              <a
-                href="https://www.lunorlabs.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:underline"
-              >
-                Lunor Labs
-              </a>
-            </p>
-
-          </div>
-        </div>
-      </footer>
+      
     </div>
   );
 }
