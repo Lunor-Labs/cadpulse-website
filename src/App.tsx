@@ -12,7 +12,7 @@ function App() {
       id: 1,
       title: "Scooter",
       description: "Scooter Design",
-      image: "/cadpulse-website/scooter.306.png",
+      image: "/cadpulse-website/projects/1.png",
       category: "Industrial Machinery",
       duration: "8 weeks",
       rating: 5,
@@ -29,7 +29,7 @@ function App() {
       id: 2,
       title: "Precision Manufacturing Jig",
       description: "Reduced assembly time by 50% with custom tooling",
-      image: "/project-manufacturing-jig.jpg",
+      image: "/cadpulse-website/projects/2.png",
       category: "Manufacturing Support",
       duration: "6 weeks",
       rating: 5,
@@ -46,7 +46,7 @@ function App() {
       id: 3,
       title: "Consumer Electronics Housing",
       description: "Optimized design for mass production scalability",
-      image: "/project-electronics-housing.jpg",
+      image: "/cadpulse-website/projects/3.png",
       category: "Product Design",
       duration: "10 weeks",
       rating: 5,
@@ -63,7 +63,7 @@ function App() {
       id: 4,
       title: "Automotive Component Reverse Engineering",
       description: "Recreated legacy parts with improved materials",
-      image: "/project-automotive-component.jpg",
+      image: "/cadpulse-website/projects/4.png",
       category: "Reverse Engineering",
       duration: "12 weeks",
       rating: 5,
@@ -80,7 +80,7 @@ function App() {
       id: 5,
       title: "Packaging Machinery Upgrade",
       description: "Modernized controls for Industry 4.0 compliance",
-      image: "/project-packaging-machinery.jpg",
+      image: "/cadpulse-website/projects/5.png",
       category: "Industrial Machinery",
       duration: "14 weeks",
       rating: 5,
@@ -97,7 +97,7 @@ function App() {
       id: 6,
       title: "Medical Device Prototype",
       description: "FDA-compliant design with enhanced ergonomics",
-      image: "/project-medical-device.jpg",
+      image: "/cadpulse-website/projects/6.png",
       category: "Product Design",
       duration: "16 weeks",
       rating: 5,
@@ -482,11 +482,7 @@ function App() {
 
 
       {/* Services Section - Modern & Attractive */}
-      <section id="services" className="relative py-24 bg-gradient-to-b from-gray-50 via-white to-gray-100 overflow-hidden">
-        
-        {/* Decorative Background Image */}
-        <div className="absolute inset-0 z-0 bg-[url('/cadpulse-website/cadpulse-logo.png')] bg-no-repeat bg-contain bg-right opacity-10 pointer-events-none"></div>
-
+      <section id="services" className="relative py-24 bg-gradient-to-b from-gray-100 via-white to-gray-200 overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-extrabold text-gray-900 mb-4">Our Services</h2>
@@ -542,6 +538,7 @@ function App() {
           </div>
         </div>
       </section>
+
 
 
       {/* Projects Section */}
