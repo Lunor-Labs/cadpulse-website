@@ -140,7 +140,7 @@ function App() {
     {
       name: "Sarah Johnson",
       role: "Engineering Manager at TechCorp",
-      quote: "Cadpulse delivered exceptional CAD models that exceeded our expectations. Their attention to detail and quick turnaround made our product launch a success.",
+      quote: "CADPULSE truly impressed me with their creativity and unmatched attention to detail! Their professionalism shone through in every aspect, and working with them was a breeze thanks to their proactive communication and excellent cooperation. Highly recommend CADPULSE for anyone in need of top-tier industrial and product design.",
       image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
     },
     {
@@ -213,8 +213,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-3">
-              <img src="/cadpulse-website/cadpulse-logo.png" alt="Cadpulse" className="h-8 w-8" />
-              <span className="text-xl font-bold text-primary">Cadpulse</span>
+              <img src="/cadpulse-website/cad.png" alt="Cadpulse" className="h-20 w-100 object-contain" />
             </div>
             
             {/* Desktop Navigation */}
@@ -330,7 +329,7 @@ function App() {
 
             {/* Top Right - About Content */}
             <div className="lg:col-span-2">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">About Cadpulse</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">About CADPULSE</h2>
               <p className="text-lg text-gray-600 leading-relaxed mb-4">
                 We are a leading SolidWorks design company specializing in precision engineering and CAD modeling. 
                 Our team combines technical expertise with innovative thinking to deliver exceptional design solutions 
@@ -422,11 +421,13 @@ function App() {
       {/* Services Section - Modern & Attractive */}
       <section id="services" className="relative py-24 bg-gradient-to-b from-gray-100 via-white to-gray-200 overflow-hidden">
         {/* Decorative Background Image */}
-        <div className="absolute inset-0 bg-[url('/cadpulse-website/service-bg.jpg')] bg-cover bg-center opacity-3 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-[url('/cadpulse-website/service-bg.jpg')] bg-cover bg-center opacity-100 pointer-events-none">
+          <div className="absolute inset-0 bg-black/60"></div>
+        </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-6xl lg:text-5xl font-extrabold text-primary leading-tight">Our Services</h2>
+            <h2 className="text-3xl md:text-6xl lg:text-5xl font-extrabold text-white leading-tight">Our Services</h2>
 
           </div>
 
@@ -659,164 +660,172 @@ function App() {
         </div>
       </section>
 
-      {/* Contact Section */}
+     {/* Contact Section */}
       <section id="contact" className="py-20 bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {/* Brand */}
-                  <div className="lg:col-span-1">
-                    <div className="flex items-center space-x-2 mb-4">
-                      <img 
-                        src="/cadpulse-website/cadpulse-logo.png" 
-                        alt="cadpulse Logo" 
-                        className="w-8 h-8 rounded-lg"
-                      />
-                      <span className="text-xl font-bold">Cadpulse</span>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
+            
+            {/* Brand (Left Side) */}
+            <div className="lg:col-span-1">
+              <div className="flex items-center space-x-2 mb-4 mt-[-20px]">
+                <img 
+                  src="/cadpulse-website/footer logo.png" 
+                  alt="cadpulse Logo" 
+                  className="h-20 w-auto object-contain"
+                />
+              </div>
+              <p className="text-neutral-300 leading-relaxed mb-4 text-sm">
+                Whether you need product design, industrial machinery development, or technical drafting,
+                our team is ready to help. Reach out to us via WhatsApp for immediate assistance or to schedule a detailed consultation.
+              </p>
+              <div className="flex items-center space-x-3">
+                {/* Email */}
+                <a
+                  href="mailto:hello@cadpulse.lk"
+                  className="w-8 h-8 bg-neutral-700 rounded-lg flex items-center justify-center hover:bg-primary-500 transition-colors duration-200"
+                >
+                  <Mail className="w-4 h-4" />
+                </a>
+                {/* Facebook */}
+                <a
+                  href="https://web.facebook.com/cadpulsefb/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 bg-neutral-700 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-200"
+                >
+                  <Facebook className="w-4 h-4" />
+                </a>
+                {/* Twitter */}
+                <a
+                  href="https://x.com/CADPULSE1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 bg-neutral-700 rounded-lg flex items-center justify-center hover:bg-sky-500 transition-colors duration-200"
+                >
+                  <Twitter className="w-4 h-4" />
+                </a>
+                {/* LinkedIn */}
+                <a
+                  href="https://www.linkedin.com/company/77887485/admin/dashboard/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 bg-neutral-700 rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors duration-200"
+                >
+                  <Linkedin className="w-4 h-4" />
+                </a>
+                {/* Instagram */}
+                <a
+                  href="https://www.instagram.com/cadpulse?igsh=b2k4N2I4M2NnY2Q2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 bg-neutral-700 rounded-lg flex items-center justify-center hover:bg-pink-500 transition-colors duration-200"
+                >
+                  <Instagram className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+
+            {/* Right Side: Quick Links, Legal, Contact */}
+            <div className="md:col-span-1 lg:col-span-3">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                {/* Quick Links */}
+                <div>
+                  <h4 className="text-base font-semibold mb-4">Quick Links</h4>
+                  <ul className="space-y-2">
+                    <li>
+                      <a href="#about" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
+                        About Us
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#services" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
+                        Services
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#therapists" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
+                        Our Therapists
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#faq" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
+                        FAQ
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Legal */}
+                <div>
+                  <h4 className="text-base font-semibold mb-4">Legal</h4>
+                  <ul className="space-y-2">
+                    <li>
+                      <a href="#" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
+                        Privacy Policy
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
+                        Terms of Service
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
+                        Cookie Policy
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
+                        Disclaimer
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Contact */}
+                <div>
+                  <h4 className="text-base font-semibold mb-4">Contact</h4>
+                  <div className="space-y-3">
+                    <div className="flex items-start space-x-2">
+                      <Mail className="w-4 h-4 text-primary-500 mt-0.5" />
+                      <p className="text-neutral-300 text-sm">hello@cadpulse.com</p>
                     </div>
-                    <p className="text-neutral-300 leading-relaxed mb-4 text-sm">
-                      Whether you need product design, industrial machinery development, or technical drafting, our team is ready to help. Reach out to us via WhatsApp for immediate assistance or to schedule a detailed consultation.
-                    </p>
-                    <div className="flex items-center space-x-3">
-                      <a
-                        href="mailto:hello@cadpulse.lk"
-                        className="w-8 h-8 bg-neutral-700 rounded-lg flex items-center justify-center hover:bg-primary-500 transition-colors duration-200"
-                      >
-                        <Mail className="w-4 h-4" />
-                      </a>
-                      {/* Facebook */}
-                      <a
-                        href="https://facebook.com/yourpage"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-8 h-8 bg-neutral-700 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-200"
-                      >
-                        <Facebook className="w-4 h-4" />
-                      </a>
-
-                      {/* Twitter */}
-                      <a
-                        href="https://twitter.com/yourhandle"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-8 h-8 bg-neutral-700 rounded-lg flex items-center justify-center hover:bg-sky-500 transition-colors duration-200"
-                      >
-                        <Twitter className="w-4 h-4" />
-                      </a>
-
-                      {/* LinkedIn */}
-                      <a
-                        href="https://linkedin.com/company/yourcompany"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-8 h-8 bg-neutral-700 rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors duration-200"
-                      >
-                        <Linkedin className="w-4 h-4" />
-                      </a>
-
-                      {/* Instagram */}
-                      <a
-                        href="https://instagram.com/yourprofile"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-8 h-8 bg-neutral-700 rounded-lg flex items-center justify-center hover:bg-pink-500 transition-colors duration-200"
-                      >
-                        <Instagram className="w-4 h-4" />
-                      </a>
+                    <div className="flex items-start space-x-2">
+                      <Phone className="w-4 h-4 text-primary-500 mt-0.5" />
+                      <p className="text-neutral-300 text-sm">+94 77 123 4567</p>
                     </div>
-                  </div>
-
-                  {/* Quick Links */}
-                  <div>
-                    <h4 className="text-base font-semibold mb-4">Quick Links</h4>
-                    <ul className="space-y-2">
-                      <li>
-                        <a href="#about" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
-                          About Us
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#services" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
-                          Services
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#therapists" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
-                          Our Therapists
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#faq" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
-                          FAQ
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-
-                  {/* Legal */}
-                  <div>
-                    <h4 className="text-base font-semibold mb-4">Legal</h4>
-                    <ul className="space-y-2">
-                      <li>
-                        <a href="#" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
-                          Privacy Policy
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
-                          Terms of Service
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
-                          Cookie Policy
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
-                          Disclaimer
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-
-                  {/* Contact */}
-                  <div>
-                    <h4 className="text-base font-semibold mb-4">Contact</h4>
-                    <div className="space-y-3">
-                      <div className="flex items-start space-x-2">
-                        <Mail className="w-4 h-4 text-primary-500 mt-0.5" />
-                        <div>
-                          <p className="text-neutral-300 text-sm">hello@cadpulse.com</p>
-                        </div>
-                      </div>
-                      <div className="flex items-start space-x-2">
-                        <Phone className="w-4 h-4 text-primary-500 mt-0.5" />
-                        <div>
-                          <p className="text-neutral-300 text-sm">+94 77 123 4567</p>
-                        </div>
-                      </div>
-                      <div className="flex items-start space-x-2">
-                        <MapPin className="w-4 h-4 text-primary-500 mt-0.5" />
-                        <div>
-                          <p className="text-neutral-300 text-sm">Colombo, Sri Lanka</p>
-                        </div>
-                      </div>
+                    <div className="flex items-start space-x-2">
+                      <MapPin className="w-4 h-4 text-primary-500 mt-0.5" />
+                      <p className="text-neutral-300 text-sm">Colombo, Sri Lanka</p>
                     </div>
                   </div>
                 </div>
+
               </div>
+            </div>
+          </div>
+        </div>
       </section>
+
  
 
       {/* Footer */}
       <footer className="bg-black text-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center space-x-3 mb-4 md:mb-0">
-              <img src="/cadpulse-website/cadpulse-logo.png" alt="Cadpulse" className="h-8 w-8" />
-              <span className="text-xl font-bold">Cadpulse</span>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+            
+            {/* Logo */}
+            <div className="flex items-center justify-center md:justify-start">
+              <img
+                src="/cadpulse-website/footer logo.png"
+                alt="Cadpulse"
+                className="h-20 w-100 object-contain"
+              />
             </div>
-            <p className="text-gray-400">
+
+            {/* Text */}
+            <p className="text-sm text-gray-400">
               © 2025 Cadpulse. All rights reserved. Developed by{' '}
               <a
                 href="https://www.lunorlabs.com"
@@ -827,6 +836,7 @@ function App() {
                 Lunor Labs
               </a>
             </p>
+
           </div>
         </div>
       </footer>
