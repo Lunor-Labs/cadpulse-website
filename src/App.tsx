@@ -379,15 +379,15 @@ function App() {
             ].map((service, index) => (
               <div
                 key={index}
-                className={`group bg-white border-t-4 ${service.border} p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-3`}
+                className={`group border ${service.border} p-8 rounded-3xl transition-all duration-300 transform hover:-translate-y-3`}
               >
                 <div
                   className={`w-16 h-16 ${service.color} rounded-2xl flex items-center justify-center mb-6 transform transition-transform duration-300 group-hover:scale-110`}
                 >
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-3">{service.title}</h3>
-                <p className="text-gray-600 leading-relaxed text-sm">{service.desc}</p>
+                <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
+                <p className="text-white leading-relaxed text-sm">{service.desc}</p>
               </div>
             ))}
           </div>
