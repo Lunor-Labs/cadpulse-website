@@ -118,7 +118,7 @@ function App() {
   };
 
   const openWhatsApp = () => {
-    window.open('https://wa.me/15551234567?text=Hello%20Cadpulse,%20I%20would%20like%20to%20discuss%20my%20project', '_blank');
+    window.open('https://wa.me/+94788638718?text=Hello%20Cadpulse,%20I%20would%20like%20to%20discuss%20my%20project', '_blank');
   };
 
   return (
@@ -138,7 +138,7 @@ function App() {
               <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-accent transition-colors">Services</button>
               <button onClick={() => scrollToSection('team')} className="text-gray-700 hover:text-accent transition-colors">Team</button>
               <button onClick={() => scrollToSection('projects')} className="text-gray-700 hover:text-accent transition-colors">Projects</button>
-              <button onClick={() => scrollToSection('contact')} className="bg-accent text-white px-4 py-2 rounded-lg hover:bg-accent/90 transition-colors">Contact</button>
+              <button onClick={() => scrollToSection('contact')} className="bg-iconcolor text-white px-4 py-2 rounded-lg hover:bg-iconcolor/90 transition-colors">Contact</button>
             </div>
 
             {/* Mobile menu button */}
@@ -199,15 +199,15 @@ function App() {
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                 <div className="animate-fade-in-delay-2">
-                  <div className="text-3xl md:text-4xl font-bold text-accent">500+</div>
+                  <div className="text-3xl md:text-6xl font-bold text-iconcolor">500+</div>
                   <div className="text-lg text-gray-600">Projects</div>
                 </div>
                 <div className="animate-fade-in-delay-3">
-                  <div className="text-3xl md:text-4xl font-bold text-accent">50+</div>
+                  <div className="text-3xl md:text-6xl font-bold text-iconcolor">50+</div>
                   <div className="text-lg text-gray-600">Clients</div>
                 </div>
                 <div className="animate-fade-in-delay-4">
-                  <div className="text-3xl md:text-4xl font-bold text-accent">5+</div>
+                  <div className="text-3xl md:text-6xl font-bold text-iconcolor">5+</div>
                   <div className="text-lg text-gray-600">Years of Experience</div>
                 </div>
               </div>
@@ -258,14 +258,14 @@ function App() {
 
             {/* Bottom Right - Mission and Vision */}
             <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-accent">
+              <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-iconcolor">
                 <h3 className="text-2xl font-bold text-primary mb-3">Our Mission</h3>
                 <p className="text-gray-600 leading-relaxed">
                   Deliver cutting-edge design solutions with efficiency and precision, helping our clients 
                   bring their innovative ideas to life through expert CAD modeling and engineering analysis.
                 </p>
               </div>
-              <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-secondary">
+              <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-iconcolor2">
                 <h3 className="text-2xl font-bold text-primary mb-3">Our Vision</h3>
                 <p className="text-gray-600 leading-relaxed">
                   To be the most trusted engineering design partner worldwide, setting new standards 
@@ -584,7 +584,7 @@ function App() {
      {/* Contact Section */}
       <footer id="contact" className="py-20 bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
+          <div className="grid md:grid-cols-1 lg:grid-cols-4 gap-x-20 gap-y-6 items-start">
             
             {/* Brand (Left Side) */}
             <div className="lg:col-span-1">
