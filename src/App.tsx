@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar,Sparkles,ExternalLink,Star,TrendingUp,Clock,Award ,Target,Settings, CheckCircle, Truck, Users, Cuboid as Cube, Zap, BarChart3, Wrench, ChevronLeft, ChevronRight, Menu, X, MessageCircle, Phone, Mail } from 'lucide-react';
+import { Facebook,Twitter, Instagram, Linkedin, MapPin, Calendar,Sparkles,ExternalLink,Star,TrendingUp,Clock,Award ,Target,Settings, CheckCircle, Truck, Users, Cuboid as Cube, Zap, BarChart3, Wrench, ChevronLeft, ChevronRight, Menu, X, MessageCircle, Phone, Mail } from 'lucide-react';
 
 
 function App() {
@@ -659,56 +659,154 @@ function App() {
         </div>
       </section>
 
-       {/* Contact Section */}
+      {/* Contact Section */}
       <section id="contact" className="py-20 bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Get In Touch</h2>
-            <div className="w-24 h-1 bg-blue-500 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Ready to bring your ideas to life? Contact us today for a consultation
-            </p>
-          </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {/* Brand */}
+                  <div className="lg:col-span-1">
+                    <div className="flex items-center space-x-2 mb-4">
+                      <img 
+                        src="/cadpulse-website/cadpulse-logo.png" 
+                        alt="cadpulse Logo" 
+                        className="w-8 h-8 rounded-lg"
+                      />
+                      <span className="text-xl font-bold">Cadpulse</span>
+                    </div>
+                    <p className="text-neutral-300 leading-relaxed mb-4 text-sm">
+                      Whether you need product design, industrial machinery development, or technical drafting, our team is ready to help. Reach out to us via WhatsApp for immediate assistance or to schedule a detailed consultation.
+                    </p>
+                    <div className="flex items-center space-x-3">
+                      <a
+                        href="mailto:hello@cadpulse.lk"
+                        className="w-8 h-8 bg-neutral-700 rounded-lg flex items-center justify-center hover:bg-primary-500 transition-colors duration-200"
+                      >
+                        <Mail className="w-4 h-4" />
+                      </a>
+                      {/* Facebook */}
+                      <a
+                        href="https://facebook.com/yourpage"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-8 h-8 bg-neutral-700 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-200"
+                      >
+                        <Facebook className="w-4 h-4" />
+                      </a>
 
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-2xl font-semibold mb-6">Let's Discuss Your Project</h3>
-              <p className="text-gray-300 mb-8 leading-relaxed">
-                Whether you need product design, industrial machinery development, or technical drafting, 
-                our team is ready to help. Reach out to us via WhatsApp for immediate assistance or 
-                to schedule a detailed consultation.
-              </p>
-              
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <Phone className="w-5 h-5 text-blue-400 mr-3" />
-                  <span>+94 788 638 718</span>
-                </div>
-                <div className="flex items-center">
-                  <Mail className="w-5 h-5 text-blue-400 mr-3" />
-                  <span>info@cadpulse.com</span>
+                      {/* Twitter */}
+                      <a
+                        href="https://twitter.com/yourhandle"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-8 h-8 bg-neutral-700 rounded-lg flex items-center justify-center hover:bg-sky-500 transition-colors duration-200"
+                      >
+                        <Twitter className="w-4 h-4" />
+                      </a>
+
+                      {/* LinkedIn */}
+                      <a
+                        href="https://linkedin.com/company/yourcompany"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-8 h-8 bg-neutral-700 rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors duration-200"
+                      >
+                        <Linkedin className="w-4 h-4" />
+                      </a>
+
+                      {/* Instagram */}
+                      <a
+                        href="https://instagram.com/yourprofile"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-8 h-8 bg-neutral-700 rounded-lg flex items-center justify-center hover:bg-pink-500 transition-colors duration-200"
+                      >
+                        <Instagram className="w-4 h-4" />
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Quick Links */}
+                  <div>
+                    <h4 className="text-base font-semibold mb-4">Quick Links</h4>
+                    <ul className="space-y-2">
+                      <li>
+                        <a href="#about" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
+                          About Us
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#services" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
+                          Services
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#therapists" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
+                          Our Therapists
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#faq" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
+                          FAQ
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Legal */}
+                  <div>
+                    <h4 className="text-base font-semibold mb-4">Legal</h4>
+                    <ul className="space-y-2">
+                      <li>
+                        <a href="#" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
+                          Privacy Policy
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
+                          Terms of Service
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
+                          Cookie Policy
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
+                          Disclaimer
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Contact */}
+                  <div>
+                    <h4 className="text-base font-semibold mb-4">Contact</h4>
+                    <div className="space-y-3">
+                      <div className="flex items-start space-x-2">
+                        <Mail className="w-4 h-4 text-primary-500 mt-0.5" />
+                        <div>
+                          <p className="text-neutral-300 text-sm">hello@cadpulse.com</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-2">
+                        <Phone className="w-4 h-4 text-primary-500 mt-0.5" />
+                        <div>
+                          <p className="text-neutral-300 text-sm">+94 77 123 4567</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-2">
+                        <MapPin className="w-4 h-4 text-primary-500 mt-0.5" />
+                        <div>
+                          <p className="text-neutral-300 text-sm">Colombo, Sri Lanka</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div className="bg-gray-800 p-8 rounded-xl">
-              <h3 className="text-xl font-semibold mb-6">Quick Contact</h3>
-              <p className="text-gray-300 mb-6">
-                Click the button below to start a WhatsApp conversation with our team. 
-                We'll respond quickly to discuss your project requirements.
-              </p>
-              <button
-                onClick={openWhatsApp}
-                className="w-full bg-green-600 text-white px-6 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center justify-center"
-              >
-                <MessageCircle className="w-5 h-5 mr-2" />
-                Start WhatsApp Chat
-              </button>
-            </div>
-          </div>
-        </div>
       </section>
-
+ 
 
       {/* Footer */}
       <footer className="bg-black text-white py-8">
@@ -718,7 +816,17 @@ function App() {
               <img src="/cadpulse-website/cadpulse-logo.png" alt="Cadpulse" className="h-8 w-8" />
               <span className="text-xl font-bold">Cadpulse</span>
             </div>
-            <p className="text-gray-400">© 2025 Cadpulse. All rights reserved.</p>
+            <p className="text-gray-400">
+              © 2025 Cadpulse. All rights reserved. Developed by{' '}
+              <a
+                href="https://www.lunorlabs.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:underline"
+              >
+                Lunor Labs
+              </a>
+            </p>
           </div>
         </div>
       </footer>
