@@ -295,7 +295,7 @@ function App() {
             <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-8">
               
               <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-iconcolor rounded-lg flex items-center justify-center mb-4">
                   <Settings className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-primary mb-3">Precision Focus</h3>
@@ -303,7 +303,7 @@ function App() {
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-iconcolor2 rounded-lg flex items-center justify-center mb-4">
                   <CheckCircle className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-primary mb-3">Quality Assured</h3>
@@ -311,7 +311,7 @@ function App() {
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-iconcolor rounded-lg flex items-center justify-center mb-4">
                   <Truck className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-primary mb-3">Fast Delivery</h3>
@@ -319,7 +319,7 @@ function App() {
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-                <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-iconcolor2 rounded-lg flex items-center justify-center mb-4">
                   <Users className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-primary mb-3">Expert Team</h3>
@@ -351,28 +351,28 @@ function App() {
               {
                 title: "Product Design & Development",
                 icon: <Cube className="w-8 h-8 text-white" />,
-                color: "from-blue-500",
+                color: "bg-iconcolor",
                 border: "",
                 desc: "SolidWorks-based 3D models with exceptional precision and visual accuracy.",
               },
               {
                 title: "Industrial Machinery & Automation",
                 icon: <Zap className="w-8 h-8 text-white" />,
-                color: "from-blue-600",
+                color: "bg-iconcolor",
                 border: "",
                 desc: "Speed up your innovation process with quick and functional design iterations.",
               },
               {
                 title: "Manufacturing Support Services",
                 icon: <BarChart3 className="w-8 h-8 text-white" />,
-                color: "from-blue-700",
+                color: "bg-iconcolor",
                 border: "",
                 desc: "Stress testing and performance analysis to ensure robust product behavior.",
               },
               {
                 title: "Design Validation and Technical Documentation",
                 icon: <Wrench className="w-8 h-8 text-white" />,
-                color: "from-blue-800",
+                color: "bg-iconcolor",
                 border: "",
                 desc: "Optimization support for manufacturability, reducing cost and complexity.",
               }
@@ -382,7 +382,7 @@ function App() {
                 className={`group bg-white border-t-4 ${service.border} p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-3`}
               >
                 <div
-                  className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6 transform transition-transform duration-300 group-hover:scale-110`}
+                  className={`w-16 h-16 ${service.color} rounded-2xl flex items-center justify-center mb-6 transform transition-transform duration-300 group-hover:scale-110`}
                 >
                   {service.icon}
                 </div>
@@ -466,9 +466,10 @@ function App() {
         </div>
       </section>
 
+      {/* Testamonial Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative max-w-4xl mx-auto">
+          <div className="relative max-w-7xl mx-auto">
             <div className="bg-white rounded-xl shadow-lg p-8 md:p-12 relative">
               {/* Image absolutely positioned, vertically centered */}
               <img
@@ -530,9 +531,9 @@ function App() {
           <div className="flex flex-col lg:flex-row items-center gap-16">
             {/* Left Side - Title */}
             <div className="lg:w-1/3">
-              <h2 className="text-5xl lg:text-6xl font-bold text-[#06006e] leading-tight">
+              <h2 className="text-5xl lg:text-6xl font-bold text-primary leading-tight">
                 Meet Our<br />
-                <span className="text-[#5e17eb]">Founders</span>
+                <span className="text-primary">Founders</span>
               </h2>
             </div>
             
@@ -595,8 +596,7 @@ function App() {
                 />
               </div>
               <p className="text-neutral-300 leading-relaxed mb-4 text-sm">
-                Whether you need product design, industrial machinery development, or technical drafting,
-                our team is ready to help. Reach out to us via WhatsApp for immediate assistance or to schedule a detailed consultation.
+                CADPULSE is a mechanical design and engineering studio specializing in product development, machinery design. Operating under Pulseway Solutions (Pvt) Ltd., we support businesses worldwide with reliable, practical, and well-crafted engineering solutions.
               </p>
               <div className="flex items-center space-x-3">
                 {/* Email */}
@@ -727,10 +727,6 @@ function App() {
           </div>
         </div>
       </footer>
-
- 
-
-      
     </div>
   );
 }

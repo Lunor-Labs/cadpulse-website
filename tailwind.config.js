@@ -11,7 +11,8 @@ export default {
         secondary: '#5e17eb',
         accent: '#00c2cb',
         white: '#FFFFFF',
-        icon: '#03bbed'
+        iconcolor: '#03bbed',
+      iconcolor2: '#04084e',
       },
     },
   },
