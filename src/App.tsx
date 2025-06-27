@@ -10,105 +10,43 @@ function App() {
   const projects = [
     {
       id: 1,
-      title: "Scooter",
-      description: "Scooter Design",
-      image: "/cadpulse-website/projects/1.jpg",
-      category: "Industrial Machinery",
-      duration: "8 weeks",
-      rating: 5,
-      details: "Complete redesign of industrial mixing equipment with automated controls, resulting in 35% productivity increase and 20% reduction in energy consumption. The project involved advanced 3D modeling, stress analysis, and integration of smart control systems.",
-      metrics: [
-        { label: "Productivity Increase", value: "35%", icon: <TrendingUp className="w-5 h-5" /> },
-        { label: "Energy Reduction", value: "20%", icon: <Zap className="w-5 h-5" /> },
-        { label: "Project Duration", value: "8 weeks", icon: <Clock className="w-5 h-5" /> }
-      ],
-      technologies: ["SolidWorks", "AutoCAD", "ANSYS", "PLC Programming"],
-      client: "Manufacturing Corp"
+      title: "Off-road Standing Scooter",
+      description: "A rugged, skateboard-style electric scooter with four hub motors and independent suspension. Delivers smooth, stable performance—handle optional.",
+      image: "/cadpulse-website/projects/1.jpg"
     },
     {
       id: 2,
-      title: "Precision Manufacturing Jig",
-      description: "Reduced assembly time by 50% with custom tooling",
+      title: "Turbocharger Gear Box",
+      description: "High-performance gearbox built for demanding environments, featuring advanced gear geometry, heat-resistant alloys, and a compact design. Engineered for reliable and efficient turbocharger operation.",
       image: "/cadpulse-website/projects/2.jpg",
-      category: "Manufacturing Support",
-      duration: "6 weeks",
-      rating: 5,
-      details: "Custom-designed manufacturing jig for precision assembly operations, dramatically improving efficiency and consistency in production. Features modular design for multiple product variants.",
-      metrics: [
-        { label: "Assembly Time Reduction", value: "50%", icon: <Clock className="w-5 h-5" /> },
-        { label: "Quality Improvement", value: "99.8%", icon: <Award className="w-5 h-5" /> },
-        { label: "ROI Achievement", value: "6 months", icon: <BarChart3 className="w-5 h-5" /> }
-      ],
-      technologies: ["Fusion 360", "CNC Programming", "Quality Control"],
-      client: "Precision Industries"
     },
     {
       id: 3,
-      title: "Consumer Electronics Housing",
-      description: "Optimized design for mass production scalability",
+      title: "Hydroponic Tray & Pot Cleaning Station",
+      description: "Efficient, eco-friendly cleaning system for hydroponic trays and pots. Boosts productivity with minimal effort—ideal for modern, sustainable farming setups.",
       image: "/cadpulse-website/projects/3.jpg",
-      category: "Product Design",
-      duration: "10 weeks",
-      rating: 5,
-      details: "Innovative housing design for consumer electronics with focus on manufacturability, cost optimization, and aesthetic appeal. Includes thermal management and EMI shielding considerations.",
-      metrics: [
-        { label: "Cost Reduction", value: "25%", icon: <TrendingUp className="w-5 h-5" /> },
-        { label: "Production Speed", value: "+40%", icon: <Zap className="w-5 h-5" /> },
-        { label: "Material Efficiency", value: "30%", icon: <Target className="w-5 h-5" /> }
-      ],
-      technologies: ["Rhino 3D", "KeyShot", "Injection Molding Analysis"],
-      client: "Tech Innovations Ltd"
     },
     {
       id: 4,
-      title: "Automotive Component Reverse Engineering",
-      description: "Recreated legacy parts with improved materials",
+      title: "Simulator Gaming Machine",
+      description: "Designed to bridge the gap between virtual and real-world experiences. Simulates flying, racing, or farming using motors and electric linear actuators for immersive, lifelike motion feedback.",
       image: "/cadpulse-website/projects/4.jpg",
-      category: "Reverse Engineering",
-      duration: "12 weeks",
-      rating: 5,
-      details: "Reverse engineered discontinued automotive components with material upgrades and performance enhancements for extended service life. Included comprehensive testing and validation.",
-      metrics: [
-        { label: "Durability Increase", value: "60%", icon: <Award className="w-5 h-5" /> },
-        { label: "Weight Reduction", value: "15%", icon: <TrendingUp className="w-5 h-5" /> },
-        { label: "Cost Savings", value: "40%", icon: <BarChart3 className="w-5 h-5" /> }
-      ],
-      technologies: ["3D Scanning", "Material Analysis", "FEA Simulation"],
-      client: "Auto Parts Solutions"
+      
     },
     {
       id: 5,
-      title: "Packaging Machinery Upgrade",
-      description: "Modernized controls for Industry 4.0 compliance",
+      title: "Wet Tissue Packing Machine",
+      description: "Automated solution for hygienic and efficient wet tissue packaging. Handles cutting, folding, moistening, and sealing with precision—ensuring uniform packs, high speed, and consistent quality.",
       image: "/cadpulse-website/projects/5.jpg",
-      category: "Industrial Machinery",
-      duration: "14 weeks",
-      rating: 5,
-      details: "Complete modernization of packaging machinery with smart controls, IoT integration, and predictive maintenance capabilities. Achieved Industry 4.0 compliance with real-time monitoring.",
-      metrics: [
-        { label: "Efficiency Gain", value: "45%", icon: <TrendingUp className="w-5 h-5" /> },
-        { label: "Downtime Reduction", value: "70%", icon: <Clock className="w-5 h-5" /> },
-        { label: "Maintenance Savings", value: "55%", icon: <Wrench className="w-5 h-5" /> }
-      ],
-      technologies: ["Industrial IoT", "HMI Design", "Predictive Analytics"],
-      client: "PackTech Systems"
+      
     },
     {
       id: 6,
-      title: "Medical Device Prototype",
-      description: "FDA-compliant design with enhanced ergonomics",
+      title: "Bread Storage Vending Machine",
+      description: "fresh and convenient access to fresh bread with optimal temperature and humidity control. Ideal for bakeries, supermarkets, and public spaces—combining convenience with quality and reduced waste.",
       image: "/cadpulse-website/projects/6.jpg",
       category: "Product Design",
-      duration: "16 weeks",
-      rating: 5,
-      details: "Precision medical device design meeting FDA compliance standards with focus on user ergonomics and manufacturing efficiency. Includes biocompatible material selection and sterilization considerations.",
-      metrics: [
-        { label: "Compliance Rating", value: "100%", icon: <CheckCircle className="w-5 h-5" /> },
-        { label: "User Satisfaction", value: "95%", icon: <Users className="w-5 h-5" /> },
-        { label: "Time to Market", value: "-30%", icon: <Clock className="w-5 h-5" /> }
-      ],
-      technologies: ["Medical CAD", "Biocompatible Materials", "FDA Validation"],
-      client: "MedTech Innovations"
+     
     }
   ];
 
@@ -483,12 +421,13 @@ function App() {
 
       {/* Services Section - Modern & Attractive */}
       <section id="services" className="relative py-24 bg-gradient-to-b from-gray-100 via-white to-gray-200 overflow-hidden">
+        {/* Decorative Background Image */}
+        <div className="absolute inset-0 bg-[url('/cadpulse-website/service-bg.jpg')] bg-cover bg-center opacity-3 pointer-events-none"></div>
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-extrabold text-gray-900 mb-4">Our Services</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Tailored engineering design solutions to bring your ideas to life
-            </p>
+            <h2 className="text-3xl md:text-6xl lg:text-5xl font-extrabold text-primary leading-tight">Our Services</h2>
+
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -545,47 +484,24 @@ function App() {
       <section id="projects" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Projects We've Delivered</h2>
-            <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover how we've helped clients achieve remarkable results through innovative CAD solutions and engineering excellence
-            </p>
+            <h2 className="text-3xl md:text-6xl lg:text-5xl font-extrabold text-primary leading-tight">Projects We've Delivered</h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0">
             {projects.map((project) => (
               <div 
                 key={project.id}
-                className="project-card cursor-pointer bg-white rounded-2xl shadow-lg hover:shadow-2xl overflow-hidden group"
+                className="project-card cursor-pointer bg-white shadow-lg hover:shadow-2xl overflow-hidden group"
                 onClick={() => setSelectedProject(project)}
               >
-                <div className="relative overflow-hidden h-56">
+                <div className="relative overflow-hidden h-100">
                   <img 
                     src={project.image} 
                     alt={project.title}
                     className="project-image w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  
-                  {/* Category Badge */}
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-gray-700">
-                    {project.category}
-                  </div>
-                  
-                  {/* Rating Stars */}
-                  <div className="absolute top-4 right-4 flex space-x-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {[...Array(project.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold flex items-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      View Details
-                    </div>
-                  </div>
+              
                 </div>
                 
                 <div className="p-6">
@@ -593,49 +509,19 @@ function App() {
                     <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
                       {project.title}
                     </h3>
-                    <div className="flex items-center text-sm text-gray-500">
-                      <Clock className="w-4 h-4 mr-1" />
-                      {project.duration}
-                    </div>
                   </div>
                   
                   <p className="text-gray-600 mb-4 leading-relaxed">
                     {project.description}
                   </p>
-                  
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-2">
-                      <TrendingUp className="w-4 h-4 text-green-500" />
-                      <span className="text-sm font-medium text-gray-700">High Impact</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <Award className="w-4 h-4 text-yellow-500" />
-                      <Sparkles className="w-4 h-4 text-blue-500" />
-                    </div>
-                  </div>
+
                 </div>
               </div>
             ))}
           </div>
-
-          <div className="text-center mt-12">
-            <button
-              onClick={openWhatsApp}
-              className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 flex items-center mx-auto group shadow-lg hover:shadow-xl transform hover:scale-105"
-            >
-              <Sparkles className="mr-2 w-5 h-5" />
-              Discuss Your Project
-              <MessageCircle className="ml-2 w-5 h-5 group-hover:scale-110 transition-transform" />
-            </button>
-          </div>
         </div>
       </section>
-
-      {/* Project Modal */}
-      <ProjectModal 
-        project={selectedProject} 
-        onClose={() => setSelectedProject(null)} 
-      />
+      
 
 
 
@@ -644,7 +530,7 @@ function App() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl font-bold text-primary mb-4">Trusted by Industry Leaders</h2>
+            <h2 className="text-5xl md:text-6xl lg:text-5xl font-extrabold text-primary leading-tight">Trusted by Industry Leaders</h2>
           </div>
           
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
@@ -667,9 +553,6 @@ function App() {
       {/* Testimonials Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">What Clients Say</h2>
-          </div>
           
           <div className="relative max-w-4xl mx-auto">
             <div className="bg-white rounded-xl shadow-lg p-8 md:p-12">
