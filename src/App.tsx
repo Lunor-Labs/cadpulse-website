@@ -213,11 +213,11 @@ function App() {
               </div>
             </div>
             {/* Right Image - Responsive */}
-            <div className="w-full flex justify-center items-center mb-8 lg:mb-0">
+            <div className="absolute top-[72%] sm:top-[30%] right-[-100px] flex justify-end items-center pointer-events-none">
               <img 
                 src="/cadpulse-website/scooter.305.png" 
                 alt="Off-road Standing Scooter" 
-                className="w-64 sm:w-80 md:w-[400px] lg:w-[500px] xl:w-[600px] object-contain opacity-80 animate-fade-in-delay-2"
+                className="w-full max-w-[900px] sm:max-w-[200px] md:max-w-[800px] lg:max-w-[1000px] xl:max-w-[1200px] object-contain opacity-20 animate-fade-in-delay-2 transform scale-125 md:scale-150"
               />
             </div>
           </div>
