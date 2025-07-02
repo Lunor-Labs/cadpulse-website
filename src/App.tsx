@@ -175,9 +175,9 @@ function App() {
 
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex items-center">
-        {/* Background Image - Black and White, Flipped */}
+        {/* Background Image - Black and White, Flipped (hidden on mobile) */}
         <div 
-          className="absolute top-[-300px] bottom-0 right-0 w-1/2 bg-cover bg-center bg-no-repeat opacity-20"
+          className="hidden lg:block absolute top-[-300px] bottom-0 right-0 w-1/2 bg-cover bg-center bg-no-repeat opacity-20"
           style={{ 
             backgroundImage: 'url(/cadpulse-website/scooter.305.png)',
             transform: 'scaleX(-1)',
@@ -185,43 +185,41 @@ function App() {
             backgroundSize: '200%'
           }}
         />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
-            <div className="text-left">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-primary animate-fade-in">
+            <div className="w-full flex flex-col items-center lg:items-start text-center lg:text-left">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 text-primary animate-fade-in">
                 Let the Pulse of Your Idea Become a Reality
               </h1>
-              <p className="text-xl md:text-2xl mb-12 text-gray-700 animate-fade-in-delay">
+              <p className="text-lg sm:text-xl md:text-2xl mb-8 text-gray-700 animate-fade-in-delay">
                 Innovative Engineering, Designed with Precision
               </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+              {/* Stats */}
+              <div className="order-2 lg:order-none grid grid-cols-1 sm:grid-cols-3 gap-8 mb-8 w-full max-w-xs sm:max-w-none">
                 <div className="animate-fade-in-delay-2">
-                  <div className="text-3xl md:text-6xl font-bold text-iconcolor">500+</div>
-                  <div className="text-lg text-gray-600">Projects</div>
+                  <div className="text-2xl sm:text-3xl md:text-6xl font-bold text-iconcolor">500+</div>
+                  <div className="text-base sm:text-lg text-gray-600">Projects</div>
                 </div>
                 <div className="animate-fade-in-delay-3">
-                  <div className="text-3xl md:text-6xl font-bold text-iconcolor">50+</div>
-                  <div className="text-lg text-gray-600">Clients</div>
+                  <div className="text-2xl sm:text-3xl md:text-6xl font-bold text-iconcolor">50+</div>
+                  <div className="text-base sm:text-lg text-gray-600">Clients</div>
                 </div>
                 <div className="animate-fade-in-delay-4">
-                  <div className="text-3xl md:text-6xl font-bold text-iconcolor">5+</div>
-                  <div className="text-lg text-gray-600">Years of Experience</div>
+                  <div className="text-2xl sm:text-3xl md:text-6xl font-bold text-iconcolor">5+</div>
+                  <div className="text-base sm:text-lg text-gray-600">Years of Experience</div>
                 </div>
               </div>
             </div>
-
-            {/* Right Image - Larger Size, Zoomed, Faded & Responsive */}
-            <div className="absolute right-[-0px] flex justify-end items-center pointer-events-none">
+            {/* Right Image - Responsive */}
+            <div className="w-full flex justify-center items-center mb-8 lg:mb-0">
               <img 
                 src="/cadpulse-website/scooter.305.png" 
                 alt="Off-road Standing Scooter" 
-                className="w-full max-w-[900px] sm:max-w-[600px] md:max-w-[800px] lg:max-w-[1000px] xl:max-w-[1200px] object-contain opacity-20 animate-fade-in-delay-2 transform scale-125 md:scale-150"
+                className="w-64 sm:w-80 md:w-[400px] lg:w-[500px] xl:w-[600px] object-contain opacity-80 animate-fade-in-delay-2"
               />
             </div>
-
           </div>
         </div>
       </section>
@@ -546,7 +544,7 @@ function App() {
                     <img 
                       src="/cadpulse-website/harith.jpg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" 
                       alt="Harith Konara" 
-                      className="w-28 h-28 rounded-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300 border-4 border-gray-200 group-hover:border-[#06006e] transform scale-110"
+                      className="w-28 h-28 rounded-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300 border-4 border-gray-200 group-hover:border-[#06006e]"
                     />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-1">Harith Konara</h3>
