@@ -83,7 +83,7 @@ function App() {
       name: "Dilshan Menaka",
       role: "",
       bio: "",
-      image: "/cadpulse-website/dilshan.JPG?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
+      image: "/cadpulse-website/dilshan.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
     },
         {
       name: "Piyal Ranjith",
@@ -546,7 +546,7 @@ function App() {
                     <img 
                       src="/cadpulse-website/harith.jpg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" 
                       alt="Harith Konara" 
-                      className="w-28 h-28 rounded-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300 border-4 border-gray-200 group-hover:border-[#06006e]"
+                      className="w-28 h-28 rounded-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300 border-4 border-gray-200 group-hover:border-[#06006e] transform scale-110"
                     />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-1">Harith Konara</h3>
@@ -556,7 +556,7 @@ function App() {
                 <div className="text-center group">
                   <div className="relative mb-4">
                     <img 
-                      src="/cadpulse-website/dilshan.JPG?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" 
+                      src="/cadpulse-website/dilshan.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" 
                       alt="Dilshan Menaka" 
                       className="w-28 h-28 rounded-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300 border-4 border-gray-200 group-hover:border-[#5e17eb]"
                     />
@@ -582,151 +582,166 @@ function App() {
       </section>
 
      {/* Contact Section */}
-      <footer id="contact" className="py-20 bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid md:grid-cols-1 lg:grid-cols-4 gap-x-20 gap-y-6 items-start">
-            
-            {/* Brand (Left Side) */}
-            <div className="lg:col-span-1">
-              <div className="flex items-center space-x-2 mb-4 mt-[-20px]">
-                <img 
-                  src="/cadpulse-website/footer logo.png" 
-                  alt="cadpulse Logo" 
-                  className="h-20 w-auto object-contain"
-                />
-              </div>
-              <p className="text-neutral-300 leading-relaxed mb-4 text-sm">
-                CADPULSE is a mechanical design and engineering studio specializing in product development, machinery design. Operating under Pulseway Solutions (Pvt) Ltd., we support businesses worldwide with reliable, practical, and well-crafted engineering solutions.
-              </p>
-              <div className="flex items-center space-x-3">
-                {/* Email */}
-                <a
-                  href="mailto:hello@cadpulse.lk"
-                  className="w-8 h-8 bg-neutral-700 rounded-lg flex items-center justify-center hover:bg-primary-500 transition-colors duration-200"
-                >
-                  <Mail className="w-4 h-4" />
-                </a>
-                {/* Facebook */}
-                <a
-                  href="https://web.facebook.com/cadpulsefb/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 bg-neutral-700 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-200"
-                >
-                  <Facebook className="w-4 h-4" />
-                </a>
-                {/* Twitter */}
-                <a
-                  href="https://x.com/CADPULSE1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 bg-neutral-700 rounded-lg flex items-center justify-center hover:bg-sky-500 transition-colors duration-200"
-                >
-                  <Twitter className="w-4 h-4" />
-                </a>
-                {/* LinkedIn */}
-                <a
-                  href="https://www.linkedin.com/company/77887485/admin/dashboard/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 bg-neutral-700 rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors duration-200"
-                >
-                  <Linkedin className="w-4 h-4" />
-                </a>
-                {/* Instagram */}
-                <a
-                  href="https://www.instagram.com/cadpulse?igsh=b2k4N2I4M2NnY2Q2"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 bg-neutral-700 rounded-lg flex items-center justify-center hover:bg-pink-500 transition-colors duration-200"
-                >
-                  <Instagram className="w-4 h-4" />
-                </a>
-              </div>
+    <footer id="contact" className="bg-black text-white relative">
+      {/* Grain texture overlay */}
+      <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.1%22%3E%3Ccircle cx=%227%22 cy=%227%22 r=%221%22/%3E%3Ccircle cx=%2227%22 cy=%227%22 r=%221%22/%3E%3Ccircle cx=%2247%22 cy=%227%22 r=%221%22/%3E%3Ccircle cx=%227%22 cy=%2227%22 r=%221%22/%3E%3Ccircle cx=%2227%22 cy=%2227%22 r=%221%22/%3E%3Ccircle cx=%2247%22 cy=%2227%22 r=%221%22/%3E%3Ccircle cx=%227%22 cy=%2247%22 r=%221%22/%3E%3Ccircle cx=%2227%22 cy=%2247%22 r=%221%22/%3E%3Ccircle cx=%2247%22 cy=%2247%22 r=%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+        {/* Mobile: Center everything, Desktop: Keep original layout */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-[4fr_1fr_2fr_2fr_2fr] gap-8">
+          {/* Brand - Mobile: centered, Desktop: original */}
+          <div className="lg:col-span-1 text-center md:text-left">
+            <div className="flex items-center space-x-2 mb-4 mt-[-20px]">
+              <img 
+                src="/cadpulse-website/footer logo.png" 
+                alt="cadpulse Logo" 
+                className="h-20 w-auto object-contain"
+              />
             </div>
+            <p className="text-neutral-400 leading-relaxed mb-6 text-sm">
+              CADPULSE is a mechanical design and engineering company specializing in product development, machinery design. Operating under Pulseway Solutions (Pvt) Ltd., we support businesses worldwide with reliable, practical, and well-crafted engineering solutions.
+            </p>
+            <div className="flex items-center space-x-3 justify-center md:justify-start">
+              <a
+                href="https://x.com/CADPULSE1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 bg-neutral-800 rounded-lg flex items-center justify-center hover:bg-primary-500 transition-colors duration-200"
+                aria-label="Follow us on Twitter"
+              >
+                <Twitter className="w-4 h-4" />
+              </a>
+              <a
+                href="https://web.facebook.com/cadpulsefb/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 bg-neutral-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-200"
+                aria-label="Follow us on Facebook"
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.instagram.com/cadpulse?igsh=b2k4N2I4M2NnY2Q2"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 bg-neutral-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-200"
+                aria-label="Follow us on Instagram"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/77887485/admin/dashboard/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 bg-neutral-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-200"
+                aria-label="Follow us on LinkedIn"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a
+                href="mailto:hello@cadpulse.lk"
+                className="w-9 h-9 bg-neutral-800 rounded-lg flex items-center justify-center hover:bg-primary-500 transition-colors duration-200"
+                aria-label="Email us"
+              >
+                <Mail className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
 
-            {/* Right Side: Quick Links, Legal, Contact */}
-            <div className="md:col-span-1 lg:col-span-3">
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Spacer column for larger gap - hidden on mobile */}
+          <div className="lg:col-span-1 hidden lg:block"></div>
 
-                {/* Quick Links */}
+          {/* Quick Links - Mobile: centered, Desktop: original */}
+          <div className="lg:col-span-1 text-center md:text-left">
+            <h4 className="text-base font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-2">
+              <li>
+                <a href="#about" className="text-neutral-400 hover:text-white transition-colors duration-200 text-sm">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="#services" className="text-neutral-400 hover:text-white transition-colors duration-200 text-sm">
+                  Services
+                </a>
+              </li>
+              <li>
+                <a href="#projects" className="text-neutral-400 hover:text-white transition-colors duration-200 text-sm">
+                  Our Projects
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Legal - Mobile: centered, Desktop: original */}
+          <div className="lg:col-span-1 text-center md:text-left">
+            <h4 className="text-base font-semibold mb-4">Legal</h4>
+            <ul className="space-y-2">
+              <li>
+                <a href="#" className="text-neutral-400 hover:text-white transition-colors duration-200 text-sm">
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-neutral-400 hover:text-white transition-colors duration-200 text-sm">
+                  Terms of Service
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-neutral-400 hover:text-white transition-colors duration-200 text-sm">
+                  Cookie Policy
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-neutral-400 hover:text-white transition-colors duration-200 text-sm">
+                  Disclaimer
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact - Mobile: centered, Desktop: original */}
+          <div className="lg:col-span-1 text-center md:text-left">
+            <h4 className="text-base font-semibold mb-4">Contact</h4>
+            <div className="space-y-3">
+              <div className="flex items-start space-x-2 justify-center md:justify-start">
+                <Mail className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" />
                 <div>
-                  <h4 className="text-base font-semibold mb-4">Quick Links</h4>
-                  <ul className="space-y-2">
-                    <li>
-                      <a href="#about" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
-                        About Us
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#services" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
-                        Services
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#therapists" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
-                        Our Therapists
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#faq" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
-                        FAQ
-                      </a>
-                    </li>
-                  </ul>
+                  <p className="text-neutral-400 text-sm">hello@cadpulse.com</p>
                 </div>
-
-                {/* Legal */}
+              </div>
+              <div className="flex items-start space-x-2 justify-center md:justify-start">
+                <Phone className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" />
                 <div>
-                  <h4 className="text-base font-semibold mb-4">Legal</h4>
-                  <ul className="space-y-2">
-                    <li>
-                      <a href="#" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
-                        Privacy Policy
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
-                        Terms of Service
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
-                        Cookie Policy
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="text-neutral-300 hover:text-white transition-colors duration-200 text-sm">
-                        Disclaimer
-                      </a>
-                    </li>
-                  </ul>
+                  <p className="text-neutral-400 text-sm">+94 77 123 4567</p>
                 </div>
-
-                {/* Contact */}
+              </div>
+              <div className="flex items-start space-x-2 justify-center md:justify-start">
+                <MapPin className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" />
                 <div>
-                  <h4 className="text-base font-semibold mb-4">Contact</h4>
-                  <div className="space-y-3">
-                    <div className="flex items-start space-x-2">
-                      <Mail className="w-4 h-4 text-primary-500 mt-0.5" />
-                      <p className="text-neutral-300 text-sm">hello@cadpulse.com</p>
-                    </div>
-                    <div className="flex items-start space-x-2">
-                      <Phone className="w-4 h-4 text-primary-500 mt-0.5" />
-                      <p className="text-neutral-300 text-sm">+94 77 123 4567</p>
-                    </div>
-                    <div className="flex items-start space-x-2">
-                      <MapPin className="w-4 h-4 text-primary-500 mt-0.5" />
-                      <p className="text-neutral-300 text-sm">Colombo, Sri Lanka</p>
-                    </div>
-                  </div>
+                  <p className="text-neutral-400 text-sm">Colombo, Sri Lanka</p>
                 </div>
-
               </div>
             </div>
           </div>
         </div>
-      </footer>
+
+        {/* Bottom section - Mobile: centered, Desktop: original */}
+        <div className="border-t border-neutral-800 mt-8 pt-6">
+          <div className="flex flex-col md:flex-row items-center justify-between text-center md:text-left">
+            <p className="text-neutral-500 text-xs">
+              © 2025 Cadpulse.com All rights reserved.
+            </p>
+            <p className="text-neutral-500 text-xs mt-2 md:mt-0">
+              Designed with precision and care in Sri Lanka
+            </p>
+            <p className="text-neutral-500 text-xs mt-2 md:mt-0">
+              Developed by <a href="https://www.lunorlabs.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-neutral-700">Lunor Labs</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
     </div>
   );
 }
