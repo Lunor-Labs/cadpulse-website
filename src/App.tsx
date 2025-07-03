@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from "react";
 import { Facebook,Twitter, Instagram, Linkedin, MapPin, Calendar,Sparkles,ExternalLink,Star,TrendingUp,Clock,Award ,Target,Settings, CheckCircle, Truck, Users, Cuboid as Cube, Zap, BarChart3, Wrench, ChevronLeft, ChevronRight, Menu, X, MessageCircle, Phone, Mail } from 'lucide-react';
 
 
@@ -6,6 +6,15 @@ function App() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [currentService, setCurrentService] = useState(0);
+
+  const serviceNames = [
+  "Product Design & Development",
+  "Industrial Machinery & Automation",
+  "Manufacturing Support Services",
+  "Design Validation & Technical Documentation",
+];
+
 
   const projects = [
     {
@@ -109,6 +118,13 @@ function App() {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentService((prev) => (prev + 1) % serviceNames.length);
+    }, 2000); // Change every 2 seconds
+    return () => clearInterval(interval);
+  }, []);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -201,8 +217,8 @@ function App() {
               <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 text-primary animate-fade-in">
                 Let the Pulse of Your Idea Become a Reality
               </h1>
-              <p className="text-lg sm:text-xl md:text-2xl mb-8 text-gray-700 animate-fade-in-delay">
-                Innovative Engineering, Designed with Precision
+              <p className="text-lg sm:text-xl md:text-2xl mb-8 text-gray-700 animate-fade-in-delay transition-all duration-500">
+                {serviceNames[currentService]}
               </p>
               {/* Stats */}
               <div className="order-2 lg:order-none grid grid-cols-1 sm:grid-cols-3 gap-8 mb-8 w-full max-w-xs sm:max-w-none">
@@ -253,13 +269,10 @@ function App() {
             <div className="lg:col-span-2">
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">About CADPULSE</h2>
               <p className="text-lg text-gray-600 leading-relaxed mb-4">
-                We are a leading SolidWorks design company specializing in precision engineering and CAD modeling. 
-                Our team combines technical expertise with innovative thinking to deliver exceptional design solutions 
-                that meet the highest industry standards.
+                We are a leading product & machinery design company specializing in precision engineering and CAD modeling. Our team combines technical expertise with innovative thinking to deliver exceptional design solutions that meet the highest industry standards.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                With over 5 years of experience and 500+ successful projects, we've established ourselves as 
-                trusted partners for companies seeking cutting-edge engineering solutions.
+                With over 5 years of experience and 500+ successful projects, we've established ourselves as trusted partners for companies and individuals seeking cutting-edge engineering solutions.
               </p>
             </div>
 
@@ -346,13 +359,10 @@ function App() {
         <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.1%22%3E%3Ccircle cx=%227%22 cy=%227%22 r=%221%22/%3E%3Ccircle cx=%2227%22 cy=%227%22 r=%221%22/%3E%3Ccircle cx=%2247%22 cy=%227%22 r=%221%22/%3E%3Ccircle cx=%227%22 cy=%2227%22 r=%221%22/%3E%3Ccircle cx=%2227%22 cy=%2227%22 r=%221%22/%3E%3Ccircle cx=%2247%22 cy=%2227%22 r=%221%22/%3E%3Ccircle cx=%227%22 cy=%2247%22 r=%221%22/%3E%3Ccircle cx=%2227%22 cy=%2247%22 r=%221%22/%3E%3Ccircle cx=%2247%22 cy=%2247%22 r=%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-8">
+          <div className="text-center mb-16">
             <h2 className="text-5xl lg:text-7xl font-bold text-white mb-4">
-              Our Services
+              Key Services
             </h2>
-            <p className="text-base lg:text-lg text-neutral-300 max-w-3xl mx-auto leading-relaxed">
-              We offer a full spectrum of CAD and engineering solutions to bring your ideas to life with precision and innovation.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -437,7 +447,7 @@ function App() {
       <section id="projects" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-6xl lg:text-5xl font-extrabold text-primary leading-tight">Projects We've Delivered</h2>
+            <h2 className="text-5xl lg:text-7xl font-extrabold text-primary leading-tight">Featured Projects</h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0">
