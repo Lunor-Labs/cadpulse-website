@@ -12,39 +12,39 @@ function App() {
       id: 1,
       title: "Off-road Standing Scooter",
       description: "A rugged, skateboard-style electric scooter with four hub motors and independent suspension. Delivers smooth, stable performance—handle optional.",
-      image: "/cadpulse-website/projects/1.jpg"
+      image: "projects/1.jpg"
     },
     {
       id: 2,
       title: "Turbocharger Gear Box",
       description: "High-performance gearbox built for demanding environments, featuring advanced gear geometry, heat-resistant alloys, and a compact design. Engineered for reliable and efficient turbocharger operation.",
-      image: "/cadpulse-website/projects/2.jpg",
+      image: "projects/2.jpg",
     },
     {
       id: 3,
       title: "Hydroponic Tray & Pot Cleaning Station",
       description: "Efficient, eco-friendly cleaning system for hydroponic trays and pots. Boosts productivity with minimal effort—ideal for modern, sustainable farming setups.",
-      image: "/cadpulse-website/projects/3.jpg",
+      image: "projects/3.jpg",
     },
     {
       id: 4,
       title: "Simulator Gaming Machine",
       description: "Designed to bridge the gap between virtual and real-world experiences. Simulates flying, racing, or farming using motors and electric linear actuators for immersive, lifelike motion feedback.",
-      image: "/cadpulse-website/projects/4.jpg",
+      image: "projects/4.jpg",
       
     },
     {
       id: 5,
       title: "Wet Tissue Packing Machine",
       description: "Automated solution for hygienic and efficient wet tissue packaging. Handles cutting, folding, moistening, and sealing with precision—ensuring uniform packs, high speed, and consistent quality.",
-      image: "/cadpulse-website/projects/5.jpg",
+      image: "projects/5.jpg",
       
     },
     {
       id: 6,
       title: "Bread Storage Vending Machine",
       description: "fresh and convenient access to fresh bread with optimal temperature and humidity control. Ideal for bakeries, supermarkets, and public spaces—combining convenience with quality and reduced waste.",
-      image: "/cadpulse-website/projects/6.jpg",
+      image: "projects/6.jpg",
       category: "Product Design",
      
     }
@@ -56,19 +56,19 @@ function App() {
       name: "Stephen brook",
       role: "",
       quote: "CADPULSE team was always open to communicate. The physical project—based on their plans—was completed yesterday, and they were with us every step of the way. Their thorough planning and detailed drawings saved us both time and money. I’d be happy to work with CADPULSE again",
-      image: "/cadpulse-website/stephen.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+      image: "stephen.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
     },
     {
       name: "Leon Kaplun",
       role: "",
       quote: "I highly recommend CADPULSE! It’s rare to find such a professional mechanical engineering service on a remote basis. They quickly understood all my requirements, saving me valuable time. Extremely patient and attentive to every customer need. I’ve used their service multiple times and will definitely continue to do so. Thank you very much! ",
-      image: "/cadpulse-website/Leon.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+      image: "Leon.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
     },
     {
       name: "Christopher Scheiene",
       role: "CEO Movelio",
       quote: "CADPULSE did an exceptional job! Their attention to detail was remarkable, ensuring every aspect of the project met my expectations. The professionalism of their work stood out, reflecting true expertise and dedication to high-quality results. The team was polite, responsive, and easy to communicate with throughout the process, promptly addressing every question and revision. I was especially impressed by their ability to deliver on time without compromising quality. I highly recommend CADPULSE for anyone seeking a reliable and skilled design partner. Thank you for the excellent work!",
-      image: "/cadpulse-website/Christopher.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+      image: "Christopher.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
     }
   ];
 
@@ -77,29 +77,29 @@ function App() {
       name: "Harith Konara",
       role: "",
       bio: "",
-      image: "/cadpulse-website/harith.jpg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
+      image: "harith.jpg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
     },
     {
       name: "Dilshan Menaka",
       role: "",
       bio: "",
-      image: "/cadpulse-website/dilshan.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
+      image: "dilshan.jpg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
     },
         {
       name: "Piyal Ranjith",
       role: "",
       bio: "",
-      image: "/cadpulse-website/piyal.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
+      image: "piyal.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
     }
   ];
 
   const clientLogos = [
-    { name: "1", logo: "/cadpulse-website/1.png" },
-    { name: "2", logo: "/cadpulse-website/2.png" },
-    { name: "3", logo: "/cadpulse-website/3.png" },
-    { name: "4", logo: "/cadpulse-website/4.png" },
-    { name: "5", logo: "/cadpulse-website/5.png" },
-    { name: "6", logo: "/cadpulse-website/6.png" }
+    { name: "1", logo: "1.png" },
+    { name: "2", logo: "2.png" },
+    { name: "3", logo: "3.png" },
+    { name: "4", logo: "4.png" },
+    { name: "5", logo: "5.png" },
+    { name: "6", logo: "6.png" }
   ];
 
   useEffect(() => {
@@ -128,7 +128,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-3">
-              <img src="/cadpulse-website/cad.png" alt="Cadpulse" className="h-20 w-100 object-contain" />
+              <img src="cad.png" alt="Cadpulse" className="h-20 w-100 object-contain" />
             </div>
             
             {/* Desktop Navigation */}
@@ -179,7 +179,7 @@ function App() {
         <div 
           className="hidden lg:block absolute top-[-300px] bottom-0 right-0 w-1/2 bg-cover bg-center bg-no-repeat opacity-20"
           style={{ 
-            backgroundImage: 'url(/cadpulse-website/scooter.305.png)',
+            backgroundImage: 'url(scooter.305.png)',
             transform: 'scaleX(-1)',
             filter: 'grayscale(100%)',
             backgroundSize: '200%'
@@ -187,6 +187,14 @@ function App() {
         />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          {/* Mobile/Tablet Image */}
+          <div className="block lg:hidden w-full flex justify-center mb-6">
+            <img 
+              src="hero.png" 
+              alt="Off-road Standing Scooter" 
+              className="w-full max-w-xs sm:max-w-md md:max-w-lg object-cover opacity-90"
+            />
+          </div>
           <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="w-full flex flex-col items-center lg:items-start text-center lg:text-left">
@@ -199,25 +207,26 @@ function App() {
               {/* Stats */}
               <div className="order-2 lg:order-none grid grid-cols-1 sm:grid-cols-3 gap-8 mb-8 w-full max-w-xs sm:max-w-none">
                 <div className="animate-fade-in-delay-2">
-                  <div className="text-2xl sm:text-3xl md:text-6xl font-bold text-iconcolor">500+</div>
+                  <div className="text-xl sm:text-2xl md:text-4xl font-bold text-iconcolor">500+</div>
                   <div className="text-base sm:text-lg text-gray-600">Projects</div>
                 </div>
                 <div className="animate-fade-in-delay-3">
-                  <div className="text-2xl sm:text-3xl md:text-6xl font-bold text-iconcolor">50+</div>
+                  <div className="text-xl sm:text-2xl md:text-4xl font-bold text-iconcolor">50+</div>
                   <div className="text-base sm:text-lg text-gray-600">Clients</div>
                 </div>
                 <div className="animate-fade-in-delay-4">
-                  <div className="text-2xl sm:text-3xl md:text-6xl font-bold text-iconcolor">5+</div>
+                  <div className="text-xl sm:text-2xl md:text-4xl font-bold text-iconcolor">5+</div>
                   <div className="text-base sm:text-lg text-gray-600">Years of Experience</div>
                 </div>
               </div>
             </div>
-            {/* Right Image - Responsive */}
-            <div className="absolute top-[72%] sm:top-[30%] right-[-100px] flex justify-end items-center pointer-events-none">
+
+            {/* Right Image - Larger Size, Zoomed, Faded & Responsive (Laptop/Desktop only) */}
+            <div className="hidden lg:absolute lg:right-0 lg:flex lg:justify-end lg:items-center lg:pointer-events-none">
               <img 
-                src="/cadpulse-website/scooter.305.png" 
+                src="scooter.305.png" 
                 alt="Off-road Standing Scooter" 
-                className="w-full max-w-[900px] sm:max-w-[200px] md:max-w-[800px] lg:max-w-[1000px] xl:max-w-[1200px] object-contain opacity-20 animate-fade-in-delay-2 transform scale-125 md:scale-150"
+                className="w-full max-w-[900px] sm:max-w-[600px] md:max-w-[800px] lg:max-w-[1000px] xl:max-w-[1200px] object-contain opacity-20 animate-fade-in-delay-2 transform scale-125 md:scale-150"
               />
             </div>
           </div>
@@ -233,7 +242,7 @@ function App() {
             <div className="lg:row-span-2 h-full">
               <div className="w-full h-full">
                 <img 
-                  src="/cadpulse-website/about.jpeg" 
+                  src="about.jpeg" 
                   alt="About Cadpulse" 
                   className="rounded-xl shadow-lg object-cover w-full h-full"
                 />
@@ -332,60 +341,90 @@ function App() {
 
 
       {/* Services Section - Modern & Attractive */}
-      <section id="services" className="relative py-24 bg-gradient-to-b from-gray-100 via-white to-gray-200 overflow-hidden">
-        {/* Decorative Background Image */}
-        <div className="absolute inset-0 bg-[url('/cadpulse-website/service-bg.jpg')] bg-cover bg-center opacity-100 pointer-events-none">
-          <div className="absolute inset-0 bg-black/70"></div>
-        </div>
+      <section id="services" className="py-8 lg:py-12 bg-neutral-900 relative">
+        {/* Grain texture overlay */}
+        <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.1%22%3E%3Ccircle cx=%227%22 cy=%227%22 r=%221%22/%3E%3Ccircle cx=%2227%22 cy=%227%22 r=%221%22/%3E%3Ccircle cx=%2247%22 cy=%227%22 r=%221%22/%3E%3Ccircle cx=%227%22 cy=%2227%22 r=%221%22/%3E%3Ccircle cx=%2227%22 cy=%2227%22 r=%221%22/%3E%3Ccircle cx=%2247%22 cy=%2227%22 r=%221%22/%3E%3Ccircle cx=%227%22 cy=%2247%22 r=%221%22/%3E%3Ccircle cx=%2227%22 cy=%2247%22 r=%221%22/%3E%3Ccircle cx=%2247%22 cy=%2247%22 r=%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-6xl lg:text-5xl font-extrabold text-white leading-tight">Our Services</h2>
-
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-8">
+            <h2 className="text-5xl lg:text-7xl font-bold text-white mb-4">
+              Our Services
+            </h2>
+            <p className="text-base lg:text-lg text-neutral-300 max-w-3xl mx-auto leading-relaxed">
+              We offer a full spectrum of CAD and engineering solutions to bring your ideas to life with precision and innovation.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 title: "Product Design & Development",
-                icon: <Cube className="w-8 h-8 text-white" />,
-                color: "bg-iconcolor",
-                border: "",
-                desc: "SolidWorks-based 3D models with exceptional precision and visual accuracy.",
+                image: "1.jpg",
+                imageAlt: "Product Design",
+                color: "",
+                description: "Transforming innovative concepts into manufacturable products with precision engineering and user-focused design.",
+                category: "product-design"
               },
               {
                 title: "Industrial Machinery & Automation",
-                icon: <Zap className="w-8 h-8 text-white" />,
-                color: "bg-iconcolor",
-                border: "",
-                desc: "Speed up your innovation process with quick and functional design iterations.",
+                image: "2.jpg",
+                imageAlt: "Machinery & Automation",
+                color: "",
+                description: "Custom machinery and automation solutions to enhance efficiency, precision, and productivity in industrial processes.",
+                category: "machinery-automation"
               },
               {
                 title: "Manufacturing Support Services",
-                icon: <BarChart3 className="w-8 h-8 text-white" />,
-                color: "bg-iconcolor",
-                border: "",
-                desc: "Stress testing and performance analysis to ensure robust product behavior.",
+                image: "3.jpg",
+                imageAlt: "Manufacturing Support",
+                color: "",
+                description: "End-to-end manufacturing support: design validation, prototyping, technical documentation, and production design assistance.",
+                category: "manufacturing-support"
               },
               {
-                title: "Design Validation and Technical Documentation",
-                icon: <Wrench className="w-8 h-8 text-white" />,
-                color: "bg-iconcolor",
-                border: "",
-                desc: "Optimization support for manufacturability, reducing cost and complexity.",
+                title: "Design Validation & Documentation",
+                image: "4.jpg",
+                imageAlt: "Design Validation",
+                color: "",
+                description: "Detailed validation through simulations and precise technical documentation for seamless execution and certification.",
+                category: "validation-documentation"
               }
             ].map((service, index) => (
               <div
                 key={index}
-                className={`group border ${service.border} p-8 rounded-3xl transition-all duration-300 transform hover:-translate-y-3`}
+                className="group relative bg-black/50 backdrop-blur-sm rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-neutral-800 flex flex-col"
               >
-                <div
-                  className={`w-16 h-16 ${service.color} rounded-2xl flex items-center justify-center mb-6 transform transition-transform duration-300 group-hover:scale-110`}
-                >
-                  {service.icon}
+                {/* Service Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.imageAlt}
+                    className="w-full h-full object-cover"
+                  />
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-t ${service.color} opacity-50`}
+                  ></div>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
-                <p className="text-white leading-relaxed text-sm">{service.desc}</p>
+
+                {/* Service Content */}
+                <div className="p-4 flex flex-col justify-between flex-1">
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-1">
+                      {service.title}
+                    </h3>
+                    <p className="text-neutral-300 text-sm leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
+                  <div className="mt-4">
+                    <a
+                      href="#"
+                      className="text-primary-500 hover:text-primary-400 transition-colors text-sm font-semibold"
+                    >
+                      Learn More
+                    </a>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -542,7 +581,7 @@ function App() {
                 <div className="text-center group">
                   <div className="relative mb-4">
                     <img 
-                      src="/cadpulse-website/harith.jpg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" 
+                      src="harith.jpg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" 
                       alt="Harith Konara" 
                       className="w-28 h-28 rounded-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300 border-4 border-gray-200 group-hover:border-[#06006e]"
                     />
@@ -554,7 +593,7 @@ function App() {
                 <div className="text-center group">
                   <div className="relative mb-4">
                     <img 
-                      src="/cadpulse-website/dilshan.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" 
+                      src="dilshan.jpg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" 
                       alt="Dilshan Menaka" 
                       className="w-28 h-28 rounded-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300 border-4 border-gray-200 group-hover:border-[#5e17eb]"
                     />
@@ -566,7 +605,7 @@ function App() {
                 <div className="text-center group">
                   <div className="relative mb-4">
                     <img 
-                      src="/cadpulse-website/piyal.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" 
+                      src="piyal.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" 
                       alt="Piyal Ranjith" 
                       className="w-28 h-28 rounded-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300 border-4 border-gray-200 group-hover:border-[#00c2cb]"
                     />
@@ -580,10 +619,8 @@ function App() {
       </section>
 
      {/* Contact Section */}
-    <footer id="contact" className="bg-black text-white relative">
+    <footer id="contact" className="bg-primary text-white relative">
       {/* Grain texture overlay */}
-      <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.1%22%3E%3Ccircle cx=%227%22 cy=%227%22 r=%221%22/%3E%3Ccircle cx=%2227%22 cy=%227%22 r=%221%22/%3E%3Ccircle cx=%2247%22 cy=%227%22 r=%221%22/%3E%3Ccircle cx=%227%22 cy=%2227%22 r=%221%22/%3E%3Ccircle cx=%2227%22 cy=%2227%22 r=%221%22/%3E%3Ccircle cx=%2247%22 cy=%2227%22 r=%221%22/%3E%3Ccircle cx=%227%22 cy=%2247%22 r=%221%22/%3E%3Ccircle cx=%2227%22 cy=%2247%22 r=%221%22/%3E%3Ccircle cx=%2247%22 cy=%2247%22 r=%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
-      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         {/* Mobile: Center everything, Desktop: Keep original layout */}
         <div className="grid md:grid-cols-2 lg:grid-cols-[4fr_1fr_2fr_2fr_2fr] gap-8">
@@ -591,7 +628,7 @@ function App() {
           <div className="lg:col-span-1 text-center md:text-left">
             <div className="flex items-center space-x-2 mb-4 mt-[-20px]">
               <img 
-                src="/cadpulse-website/footer logo.png" 
+                src="footer logo.png" 
                 alt="cadpulse Logo" 
                 className="h-20 w-auto object-contain"
               />

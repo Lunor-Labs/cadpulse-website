@@ -7,11 +7,11 @@ export default {
         'ubuntu': ['Ubuntu', 'sans-serif'],
       },
       colors: {
-        primary: '#06006e',
+        primary: '#04084E',
         secondary: '#5e17eb',
         accent: '#00c2cb',
         white: '#FFFFFF',
-        iconcolor: '#03bbed',
+        iconcolor: '#005f98',
       iconcolor2: '#04084e',
       },
     },
