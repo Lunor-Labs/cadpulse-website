@@ -204,14 +204,15 @@ function App() {
           }}
         />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-8 w-full">
           {/* Mobile/Tablet Image */}
-          <div className="block lg:hidden w-full flex justify-center mb-6">
-            <img 
-              src="hero.png" 
-              alt="Off-road Standing Scooter" 
-              className="w-full max-w-xs sm:max-w-md md:max-w-lg object-cover opacity-90"
-            />
+          <div className="block lg:hidden w-full flex justify-center mb-0">
+              <img 
+                src="hero.png" 
+                alt="Off-road Standing Scooter" 
+                className="w-full max-w-none object-cover opacity-90"
+                style={{ width: "100vw" }}
+              />
           </div>
           <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
@@ -275,7 +276,7 @@ function App() {
             <div className="lg:col-span-2">
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">About CADPULSE</h2>
               <p className="text-lg text-gray-600 leading-relaxed mb-4">
-                We are a leading product & machinery design company specializing in precision engineering and CAD modeling. Our team combines technical expertise with innovative thinking to deliver exceptional design solutions that meet the highest industry standards.
+                We are a Industrial machinery and product design company specializing in precision engineering and CAD modeling. Our team combines technical expertise with innovative thinking to deliver exceptional design solutions that meet the highest industry standards.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
                 With over 5 years of experience and 500+ successful projects, we've established ourselves as trusted partners for companies and individuals seeking cutting-edge engineering solutions.
@@ -523,16 +524,16 @@ function App() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative max-w-7xl mx-auto">
-            <div className="bg-white rounded-xl shadow-lg p-8 md:p-12 relative">
-              {/* Image absolutely positioned, vertically centered */}
+            <div className="bg-white rounded-xl shadow-lg p-8 md:p-12 relative flex flex-col md:block items-center">
+              {/* Image: Centered above text on mobile, left on desktop */}
               <img
                 src={testimonials[currentTestimonial].image}
                 alt={testimonials[currentTestimonial].name}
-                className="w-24 h-24 rounded-full object-cover grayscale hover:grayscale-0 transition-all absolute left-8 top-1/2 -translate-y-1/2"
+                className="w-24 h-24 rounded-full object-cover grayscale hover:grayscale-0 transition-all mb-4 md:mb-0 md:absolute md:left-8 md:top-1/2 md:-translate-y-1/2"
               />
-              
-              {/* Text content with left padding so it doesn’t overlap image */}
-              <div className="pl-32 text-center md:text-left">
+
+              {/* Text content: Centered on mobile, left with padding on desktop */}
+              <div className="md:pl-32 text-center md:text-left flex-1">
                 <p className="text-lg text-gray-600 italic mb-6">
                   "{testimonials[currentTestimonial].quote}"
                 </p>
@@ -546,7 +547,7 @@ function App() {
             {/* Navigation buttons */}
             <button 
               onClick={() => setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-accent hover:text-white transition-colors"
+              className="hidden md:flex absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center hover:bg-accent hover:text-white transition-colors"
               aria-label="Previous testimonial"
             >
               <ChevronLeft className="w-6 h-6" />
@@ -554,7 +555,7 @@ function App() {
 
             <button 
               onClick={() => setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-accent hover:text-white transition-colors"
+              className="hidden md:flex absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center hover:bg-accent hover:text-white transition-colors"
               aria-label="Next testimonial"
             >
               <ChevronRight className="w-6 h-6" />
@@ -568,7 +569,7 @@ function App() {
                 key={index}
                 onClick={() => setCurrentTestimonial(index)}
                 className={`w-3 h-3 rounded-full transition-colors ${
-                  index === currentTestimonial ? 'bg-accent' : 'bg-gray-300'
+                  index === currentTestimonial ? 'bg-primary' : 'bg-gray-300'
                 }`}
                 aria-label={`Select testimonial ${index + 1}`}
               />
@@ -764,13 +765,13 @@ function App() {
               <div className="flex items-start space-x-2 justify-center md:justify-start">
                 <Phone className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-neutral-400 text-sm">+94 77 123 4567</p>
+                  <p className="text-neutral-400 text-sm">+94 78 863 8718</p>
                 </div>
               </div>
               <div className="flex items-start space-x-2 justify-center md:justify-start">
                 <MapPin className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-neutral-400 text-sm">Colombo, Sri Lanka</p>
+                  <p className="text-neutral-400 text-sm">Tangalle, Sri Lanka</p>
                 </div>
               </div>
             </div>

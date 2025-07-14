@@ -14,7 +14,7 @@ function FloatingConsultationButton() {
       
       scrollTimeout.current = setTimeout(() => {
         setShowPopup(false);
-      }, 400);
+      }, 1500);
     };
     
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -26,7 +26,7 @@ function FloatingConsultationButton() {
 
   return (
     <a
-      href="https://wa.me/94771234567"
+      href="https://wa.me/+94788638718"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Book a free consultation on WhatsApp"
