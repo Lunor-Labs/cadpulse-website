@@ -79,6 +79,12 @@ function App() {
       role: "CEO Movelio",
       quote: "CADPULSE did an exceptional job! Their attention to detail was remarkable, ensuring every aspect of the project met my expectations. The professionalism of their work stood out, reflecting true expertise and dedication to high-quality results. The team was polite, responsive, and easy to communicate with throughout the process, promptly addressing every question and revision. I was especially impressed by their ability to deliver on time without compromising quality. I highly recommend CADPULSE for anyone seeking a reliable and skilled design partner. Thank you for the excellent work!",
       image: "Christopher.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+    },
+    {
+      name: "Daniel S",
+      role: "",
+      quote: "CADPULSE delivered one of the best services we’ve ever experienced. We are based in Germany, where precision and high quality are essential, and they exceeded our expectations. They were attentive to every request, held multiple meetings to refine details, and implemented every change without hesitation. Communication was excellent, technical expertise outstanding, and the final result truly impressive.We highly recommend CADPULSE for top-quality engineering and design work and look forward to working with them again.",
+      image: "Daniel.jpg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
     }
   ];
 
@@ -109,7 +115,8 @@ function App() {
     { name: "3", logo: "3.png" },
     { name: "4", logo: "4.png" },
     { name: "5", logo: "5.png" },
-    { name: "6", logo: "6.png" }
+    { name: "6", logo: "6.png" },
+    { name: "7", logo: "7.png" }
   ];
 
   useEffect(() => {
