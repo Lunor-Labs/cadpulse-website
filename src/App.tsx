@@ -531,7 +531,7 @@ function App() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative max-w-7xl mx-auto">
-            <div className="bg-white rounded-xl shadow-lg p-8 md:p-12 relative flex flex-col md:block items-center">
+            <div className="bg-white rounded-xl shadow-lg p-8 md:p-12 relative flex flex-col items-center md:flex-row md:items-start min-h-[850px] md:min-h-0">
               {/* Image: Centered above text on mobile, left on desktop */}
               <img
                 src={testimonials[currentTestimonial].image}
