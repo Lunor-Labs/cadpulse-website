@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Facebook,Twitter, Instagram, Linkedin, MapPin, Calendar,Sparkles,ExternalLink,Star,TrendingUp,Clock,Award ,Target,Settings, CheckCircle, Truck, Users, Cuboid as Cube, Zap, BarChart3, Wrench, ChevronLeft, ChevronRight, Menu, X, MessageCircle, Phone, Mail } from 'lucide-react';
 import FloatingConsultationButton from "./components/FloatingConsultationButton";
 
@@ -8,6 +8,8 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [currentService, setCurrentService] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const [logosPerView, setLogosPerView] = useState(5);
 
   const serviceNames = [
   "Product Design & Development",
@@ -116,7 +118,8 @@ function App() {
     { name: "4", logo: "4.png" },
     { name: "5", logo: "5.png" },
     { name: "6", logo: "6.png" },
-    { name: "7", logo: "7.png" }
+    { name: "7", logo: "7.png" },
+    { name: "8", logo: "8.png" },
   ];
 
   useEffect(() => {
@@ -131,6 +134,58 @@ function App() {
       setCurrentService((prev) => (prev + 1) % serviceNames.length);
     }, 2000); // Change every 2 seconds
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (!carouselRef.current) return;
+    
+    const carousel = carouselRef.current;
+    let animationId: number;
+    let offset = 0;
+    const speed = 0.5; // Adjust speed here (pixels per frame)
+    
+    const animate = () => {
+      offset += speed;
+      
+      // Reset offset when we've scrolled through all logos
+      if (offset >= carousel.scrollWidth / 2) {
+        offset = 0;
+      }
+      
+      carousel.style.transform = `translateX(-${offset}px)`;
+      animationId = requestAnimationFrame(animate);
+    };
+    
+    // Start animation
+    animationId = requestAnimationFrame(animate);
+    
+    // Clean up
+    return () => cancelAnimationFrame(animationId);
+  }, [clientLogos.length, logosPerView]);
+
+  // ADD THIS USEEFFECT FOR RESPONSIVENESS:
+  // Effect to handle responsive behavior
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setLogosPerView(6); // Show 2 logos on mobile
+      } else if (window.innerWidth < 768) {
+        setLogosPerView(8); // Show 3 logos on tablet
+      } else if (window.innerWidth < 1024) {
+        setLogosPerView(10); // Show 4 logos on small desktop
+      } else {
+        setLogosPerView(12); // Show 5 logos on large screens
+      }
+    };
+
+    // Set initial value
+    handleResize();
+    
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+    
+    // Clean up
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const scrollToSection = (sectionId: string) => {
@@ -504,7 +559,7 @@ function App() {
 
 
       {/* Client Logos Section */}
-      <section className="py-16 bg-white">
+      {/* <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-5xl md:text-6xl lg:text-5xl font-extrabold text-primary leading-tight">Trusted by Industry Leaders</h2>
@@ -523,6 +578,43 @@ function App() {
                 />
               </div>
             ))}
+          </div>
+        </div>
+      </section> */}
+            {/* Client Logos Carousel Section - Infinite Scroll */}
+      <section className="py-16 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-5xl md:text-6xl lg:text-5xl font-extrabold text-primary leading-tight">
+              Trusted by Industry Leaders
+            </h2>
+          </div>
+          
+          {/* Carousel Container */}
+          <div className="relative overflow-hidden">
+            {/* Animated Carousel Track */}
+            <div 
+              ref={carouselRef}
+              className="flex"
+              style={{ 
+                width: `${clientLogos.length * (100 / logosPerView) * 2}%` // Double width for seamless looping
+              }}
+            >
+              {/* Double the logos for seamless looping */}
+              {[...clientLogos, ...clientLogos].map((client, index) => (
+                <div 
+                  key={index}
+                  className="flex-shrink-0 px-4 grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110"
+                  style={{ width: `${100 / logosPerView}%` }}
+                >
+                  <img 
+                    src={client.logo} 
+                    alt={client.name}
+                    className="h-12 w-auto mx-auto object-contain opacity-60 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
