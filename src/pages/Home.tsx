@@ -197,10 +197,6 @@ function App() {
     setIsMenuOpen(false);
   };
 
-  const openWhatsApp = () => {
-    window.open('https://wa.me/+94788638718?text=Hello%20Cadpulse,%20I%20would%20like%20to%20discuss%20my%20project', '_blank');
-  };
-
   return (
     <div className="min-h-screen bg-white font-ubuntu">
       {/* Navigation */}
@@ -244,15 +240,6 @@ function App() {
           </div>
         )}
       </nav>
-
-      {/* WhatsApp Floating Button */}
-     {/* <button
-        onClick={openWhatsApp}
-        className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110"
-      >
-        <MessageCircle size={24} />
-      </button>
-      */}
 
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex items-center">
@@ -313,9 +300,6 @@ function App() {
             </div>
           </div>
         </div>
-
-        <FloatingConsultationButton />
-
 
       </section>
 
