@@ -4,6 +4,22 @@ import { X, Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
 const ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY as string | undefined;
 
+const SRI_LANKA_TIMEZONE = "Asia/Colombo";
+
+// e.g. "Mon 19 Oct 2026, 10:00 am"
+function formatDateTime(date: Date, timeZone: string) {
+  return new Intl.DateTimeFormat("en-GB", {
+    timeZone,
+    weekday: "short",
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  }).format(date);
+}
+
 type Status = "idle" | "submitting" | "success" | "error";
 
 interface ConsultationFormProps {
@@ -55,17 +71,26 @@ function ConsultationForm({ isOpen, onClose }: ConsultationFormProps) {
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form));
 
+    // Clients book from different countries: the picked date/time is in their local timezone,
+    // so convert it to Sri Lanka time for us and keep their original time for reference
+    const visitorTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const appointment = new Date(`${data.preferred_date}T${data.preferred_time}`);
+    const sriLankaTime = formatDateTime(appointment, SRI_LANKA_TIMEZONE);
+
     setStatus("submitting");
     try {
       const response = await fetch(WEB3FORMS_ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
+        // Key order here is the order fields appear in the email
         body: JSON.stringify({
-          ...data,
-          // Clients book from different countries, so record which timezone the date/time is in
-          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+          name: data.name,
+          email: data.email,
+          appointment_sri_lanka_time: sriLankaTime,
+          client_local_time: `${formatDateTime(appointment, visitorTimezone)} (${visitorTimezone})`,
+          note: data.note,
           access_key: ACCESS_KEY,
-          subject: `Consultation request from ${data.name} — ${data.preferred_date} at ${data.preferred_time}`,
+          subject: `Consultation request from ${data.name} — ${sriLankaTime} (Sri Lanka time)`,
           from_name: "Cadpulse Website",
           botcheck: Boolean(data.botcheck),
         }),
